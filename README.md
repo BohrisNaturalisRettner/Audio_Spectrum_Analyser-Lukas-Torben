@@ -16,7 +16,7 @@ Ein Arduino-Programm besteht aus zwei Hauptfunktionen: der Setup- und der Loop-F
 
 ```
 int strope = 13;      // setzt die Zahl des Pins für den Strope-Impuls
-int reset = 12;       // setzt dieahl des Pins für den Reset-Impuls
+int reset = 12;       // setzt die Zahl des Pins für den Reset-Impuls
 int counter;          // integer zum zählen bis 7 um die 7 frequenzen auszugeben
 int frequz[7]         // array mit 7 stellen, um die 7 werte für die frequenzen darin zu speichern
 
