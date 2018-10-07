@@ -8,4 +8,4 @@ Damit nun der MSGEQ7 Daten auswirft, muss er korrekt verkabelt werden. Um dies z
 
 ![typical_application_pic](https://user-images.githubusercontent.com/42578917/46585242-a6e46780-ca6e-11e8-8dd0-d9de6e757cdf.png | width=48)
 
-<img src="https://user-images.githubusercontent.com/42578917/46585242-a6e46780-ca6e-11e8-8dd0-d9de6e757cdf.png" width="500px">
+<img src="https://user-images.githubusercontent.com/42578917/46585242-a6e46780-ca6e-11e8-8dd0-d9de6e757cdf.png" width="300px">
