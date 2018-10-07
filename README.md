@@ -1,5 +1,5 @@
 # Arduino Mega Audio Equalizer mit dem MSGEQ7 
-## Lukas, Torben
+## Torben, Lukas
 
 
 
