@@ -11,7 +11,7 @@ Damit nun der MSGEQ7 Daten auswirft, muss er korrekt verkabelt werden. Um dies z
 
 Auf dieses Projekt bezogen, sieht der Schaltplan für den MSGEQ7 wie folgt aus:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png" width="500px"></p>
 ## Software
 ### Programmcode
 
