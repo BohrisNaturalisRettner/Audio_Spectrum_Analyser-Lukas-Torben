@@ -15,8 +15,8 @@ Damit nun der MSGEQ7 Daten auswirft, muss er korrekt verkabelt werden. Um dies z
 Ein Arduino-Programm besteht aus zwei Hauptfunktionen: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 sowie die Schaltung der LEDs werden 4 Variablen benötigt:
 
 ```
-int strope = 13;      // setzt den 13 pin als strope output
-int reset = 12;       // setzt den 12 pin als reset output
+int strope = 13;      // setzt die Zahl des Pins für den Strope-Impuls
+int reset = 12;       // setzt dieahl des Pins für den Reset-Impuls
 int counter;          // integer zum zählen bis 7 um die 7 frequenzen auszugeben
 int frequz[7]         // array mit 7 stellen, um die 7 werte für die frequenzen darin zu speichern
 
