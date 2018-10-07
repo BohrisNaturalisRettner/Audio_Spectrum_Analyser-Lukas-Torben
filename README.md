@@ -6,4 +6,4 @@
 
 Damit nun der MSGEQ7 Daten auswirft, muss er korrekt verkabelt werden. Um dies zu tun muss man ins Datasheet für den Mikrocontroller schauen, auf dem man unter Typical Application eine Anleitung findet:
 
-<div style="text-align:center"><img src="https://user-images.githubusercontent.com/42578917/46585242-a6e46780-ca6e-11e8-8dd0-d9de6e757cdf.png" width="300px" align="center"></div>
+<div style="text-align:center"><img align="center" src="https://user-images.githubusercontent.com/42578917/46585242-a6e46780-ca6e-11e8-8dd0-d9de6e757cdf.png" width="300px" align="center"></div>
