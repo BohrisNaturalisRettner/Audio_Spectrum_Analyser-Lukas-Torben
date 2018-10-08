@@ -32,6 +32,7 @@ Nach der Installation erhält man dann folgende Entwicklungsumgebung:
 <br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46620749-de621b00-cb25-11e8-87e8-e45f394e590d.png" width="600px"></p>
 <br>
+
 ## Hardware
 ### MSGEQ7 anschließen
 
