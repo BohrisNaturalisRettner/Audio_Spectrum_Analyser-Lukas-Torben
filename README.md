@@ -56,3 +56,4 @@ int reset = 12;       // setzt die Zahl des Pins für den Reset-Impuls
 int counter;          // integer zum zählen bis 7 um die 7 frequenzen auszugeben
 int frequz[7]         // array mit 7 stellen, um die 7 werte für die frequenzen darin zu speichern
 ```
+Die "strope" Variable speichert die Zahl des Pins, welcher den Puls für den Strope Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Varibale "counter" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen
