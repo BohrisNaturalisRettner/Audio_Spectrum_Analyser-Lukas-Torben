@@ -17,7 +17,8 @@ Passive Bauelemente
 
 Aktive Bauelemente 
 
-- Hallo
+- BITTE NOCH EINFÜGEN
+- BITTE NOCH EINFÜGEN
 
 ## Hardware
 ### MSGEQ7 anschließen
