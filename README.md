@@ -1,6 +1,12 @@
 # Arduino Mega Audio Equalizer mit dem MSGEQ7 
 ## Torben, Lukas
 
+### Komponentenliste
+
+- Arduino Mega
+- MSGEQ7-Mikrocontroller
+- Steckbrett mit Jumper-Kabeln
+- Multimeter
 
 ## Hardware
 ### MSGEQ7 anschließen
