@@ -7,13 +7,17 @@
 - MSGEQ7-Mikrocontroller
 - Steckbrett mit Jumper-Kabeln
 - Multimeter
+
 Passive Bauelemente
+
 - 2x 100nF Keramik-Kondensatoren
 - 1x 33pF Keramik-Kondensator
 - 1x 10nF Keramik-Kondensator
 - 1x 200kOhm Widerstand
-Aktive Bauelemente
-- 
+
+Aktive Bauelemente 
+
+- Hallo
 
 ## Hardware
 ### MSGEQ7 anschließen
