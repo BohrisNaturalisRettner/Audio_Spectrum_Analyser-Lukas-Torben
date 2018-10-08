@@ -7,6 +7,7 @@
 - MSGEQ7-Mikrocontroller
 - Steckbrett mit Jumper-Kabeln
 - Multimeter
+- Lötkolben
 
 Passive Bauelemente
 
