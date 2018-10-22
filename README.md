@@ -61,4 +61,4 @@ Die "strope" Variable speichert die Zahl des Pins, welcher den Puls für den Str
 
 ### Quellen
 
-<a href="">https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/</a>
+- https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/</a>
