@@ -10,7 +10,7 @@
 <li><a href="#">Bitte füllen</a><br></li>
 <li><a href="#">Bitte füllen</a><br></li>
 
-### Komponentenliste
+## Komponentenliste
 <details id="komponenten">
   <summary>Arbeitsgeräte</summary>
   <li><a href="https://www.conrad.de/de/arduino-board-mega-2560-a000067-191790.html">Arduino Mega</a></li>
