@@ -4,11 +4,11 @@
 ## Inhaltsverzeichnis
   <li><a href="#komponenten">Komponentenliste</a><br></li>
   <li><a href="#software">Software</a><br></li>
-<li><a href="#">Bitte füllen</a><br></li>
-<li><a href="#">Bitte füllen</a><br></li>
-<li><a href="#">Bitte füllen</a><br></li>
-<li><a href="#">Bitte füllen</a><br></li>
-<li><a href="#">Bitte füllen</a><br></li>
+    <li><a href="#">Bitte füllen</a><br></li>
+    <li><a href="#">Bitte füllen</a><br></li>
+    <li><a href="#">Bitte füllen</a><br></li>
+    <li><a href="#">Bitte füllen</a><br></li>
+    <li><a href="#">Bitte füllen</a><br></li>
 
 ## Komponentenliste
 <details id="komponenten">
@@ -158,6 +158,7 @@ pinMode(SiOn, OUTPUT); pinMode(FiTw, OUTPUT); pinMode(FiTh, OUTPUT); pinMode(FiF
 pinMode(SiOn, OUTPUT); pinMode(SiTw, OUTPUT); pinMode(SiTh, OUTPUT); pinMode(SiFo, OUTPUT); pinMode(SiFi, OUTPUT); pinMode(SiSi, OUTPUT);
 pinMode(SeOn, OUTPUT); pinMode(SeTw, OUTPUT); pinMode(SeTh, OUTPUT); pinMode(SeFo, OUTPUT); pinMode(SeFi, OUTPUT); pinMode(SeSi, OUTPUT);
 ``` 
+Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor verschiedene Signale vom Arduino erhalten. Ein genaues Diagramm dazu ist im Datasheet des Mikrocontrollers zu finden: 
 
 ### Quellen
 
