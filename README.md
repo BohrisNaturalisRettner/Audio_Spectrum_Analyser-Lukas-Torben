@@ -44,8 +44,8 @@
   <li><a href="">50x LEDs</a></li><br>
 </details>
 
-## Bauelemente und Installation
-### Bauelemente
+<h2 id="bauundinst">Bauelemente und Installation</h2>
+<h3 id="bauelemente">Bauelemente</h3>
 
 Als Arduino wird in diesem Fall der Elegoo Mega 2560 mit dem ATmega2560-Controller verwendet. Einerseits aufgrund seines günstigen Preises, andererseits wegen der 500mA Überlastungssicherung. Diese ist besonders beim Einsatz vieler kleiner Bauteile wie LEDs und Transistoren mit vielen möglichen Fehlerquellen, wie den Lötstellen und Kabelverbindungen, nützlich, um den Arduino vor Überlastung bei einem Schaltungsfehler zu schützen
 
