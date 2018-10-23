@@ -56,7 +56,7 @@ Als LEDs werden Standart-Farbige LED Dioden verwendet, welche mit einem NPN Tran
 Als Kondensatoren werden Keramik-Kondensatoren verwendet, da diese, im gegensatz zu Elkos in den kleinen Kapazitäten unter 1uF günstig und oft verfügbar sind.
 
 Sonstige Materialien wie Lochrasterplatine und Litze sind Standart-Elektronik-Komponenten ohne besondere Eigenschaften.
-### Installation der Entwicklungsumgebung
+<h3 id="installation">Installation der Entwicklungsumgebung</h3>
 
 Um Programme auf dem Arduino zu installieren, wird eine IDE benötigt. In diesem Fall wird die Arduino IDE Version 1.8.6 für Windows verwendet:
 
