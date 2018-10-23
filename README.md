@@ -84,10 +84,62 @@ int frequz[7]         // array mit 7 stellen, um die 7 werte für die frequenzen
 Die "strope" Variable speichert die Zahl des Pins, welcher den Puls für den Strope Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Varibale "counter" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen. Die "frequz" Variable ist ein Array, in dem letztlich die Werte für die Frequenzen gespeichert werden. Alle Varibalen sind Integer, da nur Ganzzahlen verwendet werden.
 
 Zudem werden die Pins für die LEDs, um sie jeweils später zu verwenden, in integer geschrieben. Dabei wird für jede Led ein Pin-Name, bestehend aus Horizontaler und Vertikaler Reihe verwendet:
+<details>
+  <summary>```Variablen```</summary>
+  
 ```
+int OnOn = 3;
+int OnTw = 4;
+int OnTh = 5;
+int OnFo = 6;
+int OnFi = 7;
+int OnSi = 8;
+int OnSe = 9;
+int TwOn = 10;
+int TwTw = 11;
+int TwTh = 12;
+int TwFo = 13;
+int TwFi = 22;
+int TwSi = 23;
+int TwSe = 24;
+int ThOn = 25;
+int ThTw = 26;
+int ThTh = 27;
+int ThFo = 28;
+int ThFi = 29;
+int ThSi = 30;
+int ThSe = 31;
+int FoOn = 32;
+int FoTw = 33;
+int FoTh = 34;
+int FoFo = 35;
+int FoFi = 36;
+int FoSi = 37;
+int FoSe = 38;
+int FiOn = 39;
+int FiTw = 40;
+int FiTh = 41;
+int FiFo = 42;
+int FiFi = 43;
+int FiSi = 44;
+int FiSe = 45;
+int SiOn = A1;
+int SiTw = A2;
+int SiTh = A3;
+int SiFo = A4;
+int SiFi = A5;
+int SiSi = A6;
+int SiSe = A7;
+int SeOn = A8;
+int SeTw = A9;
+int SeTh = A10;
+int SeFo = A11;
+int SeFi = A12;
+int SeSi = A13;
+int SeSe = A14;
 
 ```
-
+</details>
 
 
 ### Quellen
