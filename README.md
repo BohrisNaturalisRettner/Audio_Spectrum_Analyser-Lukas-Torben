@@ -12,7 +12,7 @@ Arbeitsgeräte
 
 
 Passive Bauelemente
-<hr width="90%">
+<hr width="900px">
 <ul>
   <li>
      <a color="#FFFFFF" href="https://www.conrad.de/de/keramik-kondensator-radial-bedrahtet-100-nf-100-vdc-10-holystone-rdcx104k101dka-1-st-531746.html">2x 100nF Keramik-Kondensatoren</a>
