@@ -1,6 +1,11 @@
 # Arduino Mega Audio Equalizer mit dem MSGEQ7 
 ### Torben, Lukas
-<a href="#test">Test</a>
+
+### Inhaltsverzeichnis 
+<a href="#komponenten">Komponentenliste</a>
+<a href="#software">Software</a>
+<a href="#">Bitte füllen</a>
+
 ### Komponentenliste
 
 Arbeitsgeräte
