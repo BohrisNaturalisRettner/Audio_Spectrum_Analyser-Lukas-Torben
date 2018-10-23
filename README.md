@@ -1,6 +1,8 @@
 ### Torben, Lukas
 # Arduino Mega Audio Spectrum Analyser mit dem MSGEQ7 
-<hr width="300px">
+
+### Hallo
+# Hallo
 ## Inhaltsverzeichnis
   <li><a href="#komponenten">Komponentenliste</a><br></li>
   <li><a href="#software">Software</a><br></li>
