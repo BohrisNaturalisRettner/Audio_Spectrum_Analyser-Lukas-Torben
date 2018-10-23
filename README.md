@@ -6,7 +6,7 @@
     + <a href="#bauelemente">Bauelemente</a>
     + <a href="#installation">Intstallation der Entwicklungsumgebung</a>   
   * <a href="#software">Software</a>
-    + <a href="#">Bitte füllen</a>
+    + <a href="#setupfunc">Setup Funktion</a>
   * <a href="#">Bitte füllen</a>
   * <a href="#">Bitte füllen</a>
   * <a href="#">Bitte füllen</a>
@@ -143,7 +143,7 @@ int SeSe = A14;
 
 ```
 </details>
-<h4>Setup Funktion</h4>
+<h4 id="setupfunc">Setup Funktion</h4>
 Alle zuvor initialisierten Variablen enthalten Pins. Diese müssen nun als Output bzw. Input innerhalb der Setup Funktion des Arduino Programms klassifiziert werden: 
 
 ```
