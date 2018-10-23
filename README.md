@@ -7,11 +7,10 @@
     + <a href="#installation">Intstallation der Entwicklungsumgebung</a>   
   * <a href="#software">Software</a>
     + <a href="#">Bitte füllen</a>
-  </ul>
-    <li><a href="#">Bitte füllen</a><br></li>
-    <li><a href="#">Bitte füllen</a><br></li>
-    <li><a href="#">Bitte füllen</a><br></li>
-    <li><a href="#">Bitte füllen</a><br></li>
+  * <a href="#">Bitte füllen</a>
+  * <a href="#">Bitte füllen</a>
+  * <a href="#">Bitte füllen</a>
+  * <a href="#">Bitte füllen</a>
 
 <h2 id="komponenten">Komponentenliste</h2>
 <details>
