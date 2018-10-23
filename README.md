@@ -9,7 +9,7 @@
     <li><a href="#">Bitte füllen</a><br></li>
     <li><a href="#">Bitte füllen</a><br></li>
 
-<h2 id="komponenten" color="#66C4FF">Komponentenliste</h2>
+<h2 id="komponenten" style="color:red;">Komponentenliste</h2>
 <details>
   <summary>Arbeitsgeräte</summary>
   <br>
