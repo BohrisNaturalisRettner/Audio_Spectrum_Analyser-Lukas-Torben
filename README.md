@@ -160,6 +160,8 @@ pinMode(SeOn, OUTPUT); pinMode(SeTw, OUTPUT); pinMode(SeTh, OUTPUT); pinMode(SeF
 ``` 
 Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor verschiedene Signale vom Arduino erhalten. Ein genaues Diagramm dazu ist im Datasheet des Mikrocontrollers zu finden: 
 
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/47381631-bfa47c80-d700-11e8-978a-600b845e36c2.png"></p>
+
 ### Quellen
 
 - https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
