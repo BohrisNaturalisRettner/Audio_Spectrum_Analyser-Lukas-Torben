@@ -3,11 +3,10 @@
 ## Inhaltsverzeichnis
   * <a href="#komponenten">Komponentenliste</a>
   * <a href="#bauundinst">Bauelemente und Installation</a>
-  <ul>
-    <li><a href="#bauelemente">Bauelemente</a></li>
-    <li><a href="#installation">Intstallation der Entwicklungsumgebung</a></li>
-  </ul>
-  </li>
+  + <a href="#bauelemente">Bauelemente</a>
+  + <a href="#installation">Intstallation der Entwicklungsumgebung</a>
+  
+  
   <li><a href="#software">Software</a><br></li>
   <ul>
     <li><a href="#">Bitte füllen</a><br></li>
