@@ -12,12 +12,14 @@
 
 ### Komponentenliste
 
-Arbeitsgeräte
+<details>
+  <summary>Arbeitsgeräte</summary>
   <li><a href="https://www.conrad.de/de/arduino-board-mega-2560-a000067-191790.html">Arduino Mega</a></li>
   <li><a href="https://www.conrad.de/de/linear-ic-audio-spezialanwendungen-msgeq7-kfz-audio-consumer-audio-automotive-audio-media-player-dip-8-1436444.html">MSGEQ7-Mikrocontroller</a></li>
   <li><a href="#">Steckbrett mit Jumper-Kabeln</a></li>
   <li><a href="#">Multimeter</a></li>
   <li><a href="#">Lötkolben</a></li>
+  </details>
 
 <details>
   <summary>Passive Bauelemente</summary>
