@@ -10,33 +10,14 @@ Arbeitsgeräte
 - Multimeter
 - Lötkolben
 
-<div class="container" display="flex">
-<ul class="liste">
-  <li>Hallo</li>
-  <li>Hallo</li>
-  <li>Welt</li>
-</ul>
-<ul class="liste"> 
- <li>Hallo</li>
-  <li>Hallo</li>
-  <li>Welt</li>
-</ul>
-</div>
-<style>
- 
-    .container {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
 
 Passive Bauelemente
-- 2x 100nF Keramik-Kondensatoren
-- 1x 33pF Keramik-Kondensator
-- 1x 10nF Keramik-Kondensator
-- 1x 200kOhm Widerstand
-
+<ul>
+  <li><a href="https://www.conrad.de/de/diotec-transistor-bjt-diskret-bc548c-to-92-1-npn-155039.html">2x 100nF Keramik-Kondensatoren</a></li>
+  <li>1x 33pF Keramik-Kondensator</li>
+  <li>1x 10nF Keramik-Kondensator</li>
+  <li>1x 200kOhm Widerstand</li>
+</ul>
 Aktive Bauelemente 
 - 49x NPN Transistoren 
 - 50x LEDs
