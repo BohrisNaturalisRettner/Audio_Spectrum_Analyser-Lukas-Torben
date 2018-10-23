@@ -10,7 +10,7 @@ Arbeitsgeräte
 - Multimeter
 - Lötkolben
 
-<div class="container">
+<div class="container" display="flex">
 <ul class="liste">
   <li>Hallo</li>
   <li>Hallo</li>
