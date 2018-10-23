@@ -14,12 +14,12 @@
 Arbeitsgeräte
   <li><a href="https://www.conrad.de/de/arduino-board-mega-2560-a000067-191790.html">Arduino Mega</a></li>
   <li><a href="https://www.conrad.de/de/linear-ic-audio-spezialanwendungen-msgeq7-kfz-audio-consumer-audio-automotive-audio-media-player-dip-8-1436444.html">MSGEQ7-Mikrocontroller</a></li>
-  <li><a href="">Steckbrett mit Jumper-Kabeln</a></li>
-  <li><a href="">Multimeter</a></li>
-  <li><a href="">Lötkolben</a></li>
+  <li><a href="#">Steckbrett mit Jumper-Kabeln</a></li>
+  <li><a href="#">Multimeter</a></li>
+  <li><a href="#">Lötkolben</a></li>
 
 
-Passive Bauelemente
+<h3>Passive Bauelemente</h3>
 <ul>
   <li>
      <a color="#FFFFFF" href="https://www.conrad.de/de/keramik-kondensator-radial-bedrahtet-100-nf-100-vdc-10-holystone-rdcx104k101dka-1-st-531746.html">2x 100nF Keramik-Kondensatoren</a>
