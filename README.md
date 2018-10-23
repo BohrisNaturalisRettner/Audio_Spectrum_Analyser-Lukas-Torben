@@ -20,7 +20,7 @@ Arbeitsgeräte
   <li><a href="#">Lötkolben</a></li>
 
 
-<h3>Passive Bauelemente</h3>
+Passive Bauelemente
 <ul>
   <li>
      <a color="#FFFFFF" href="https://www.conrad.de/de/keramik-kondensator-radial-bedrahtet-100-nf-100-vdc-10-holystone-rdcx104k101dka-1-st-531746.html">2x 100nF Keramik-Kondensatoren</a>
