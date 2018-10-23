@@ -21,18 +21,13 @@ Arbeitsgeräte
 
 
 Passive Bauelemente
-<ul>
-  <li>
-     <a color="#FFFFFF" href="https://www.conrad.de/de/keramik-kondensator-radial-bedrahtet-100-nf-100-vdc-10-holystone-rdcx104k101dka-1-st-531746.html">2x 100nF Keramik-Kondensatoren</a>
-  </li>
-  <li>
-    <a href="">1x 33pF Keramik-Kondensator</a>
-  </li>
-  <li>1x 10nF Keramik-Kondensator</li>
-  <li>1x 200kOhm Widerstand</li>
-</ul>
+  <li><a color="#FFFFFF" href="https://www.conrad.de/de/keramik-kondensator-radial-bedrahtet-100-nf-100-vdc-10-holystone-rdcx104k101dka-1-st-531746.html">2x 100nF Keramik-Kondensatoren</a></li>
+  <li><a href="#">1x 33pF Keramik-Kondensator</a></li>
+  <li><a href="#">1x 10nF Keramik-Kondensator</a></li>
+  <li><a href="#">1x 200kOhm Widerstand</a></li>
+
 Aktive Bauelemente 
-  <li><a href="">49x NPN Transistoren</a></li>
+  <li><a href="https://www.conrad.de/de/diotec-transistor-bjt-diskret-bc548c-to-92-1-npn-155039.html">49x NPN Transistoren</a></li>
   <li><a href="">50x LEDs</a></li>
 
 ### Bauteile
