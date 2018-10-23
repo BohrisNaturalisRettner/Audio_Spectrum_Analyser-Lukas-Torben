@@ -85,7 +85,7 @@ Die "strope" Variable speichert die Zahl des Pins, welcher den Puls für den Str
 
 Zudem werden die Pins für die LEDs, um sie jeweils später zu verwenden, in integer geschrieben. Dabei wird für jede Led ein Pin-Name, bestehend aus Horizontaler und Vertikaler Reihe verwendet:
 <details>
-  <summary>```Variablen```</summary>
+  <summary>LED-Variablen</summary>
   
 ```
 int OnOn = 3;
