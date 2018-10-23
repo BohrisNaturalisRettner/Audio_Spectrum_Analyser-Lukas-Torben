@@ -1,17 +1,16 @@
 ### Torben, Lukas
 # Arduino Mega Audio Spectrum Analyser mit dem MSGEQ7 
-### Inhaltsverzeichnis 
-<ul>
-  <li><a href="#komponenten">Komponentenliste</a><br>
-    <li>
-    <a href="#software">Software</a><br>
-  </li>
-  </li>
-<a href="#">Bitte füllen</a><br>
-</ul>
+
+## Inhaltsverzeichnis 
+  <li><a href="#komponenten">Komponentenliste</a><br></li>
+  <li><a href="#software">Software</a><br></li>
+<li><a href="#">Bitte füllen</a><br></li>
+<li><a href="#">Bitte füllen</a><br></li>
+<li><a href="#">Bitte füllen</a><br></li>
+<li><a href="#">Bitte füllen</a><br></li>
+<li><a href="#">Bitte füllen</a><br></li>
 
 ### Komponentenliste
-
 <details>
   <summary>Arbeitsgeräte</summary>
   <li><a href="https://www.conrad.de/de/arduino-board-mega-2560-a000067-191790.html">Arduino Mega</a></li>
