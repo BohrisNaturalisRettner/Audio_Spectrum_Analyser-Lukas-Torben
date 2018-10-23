@@ -3,7 +3,7 @@
 ## Inhaltsverzeichnis
   <li><a href="#komponenten">Komponentenliste</a><br></li>
   <li><a href="#software">Software</a><br></li>
-    <ul><li><a href="#">Bitte füllen</a><br></li></ul>
+    <ul><li list-style-type="circle"><a href="#">Bitte füllen</a><br></li></ul>
     <li><a href="#">Bitte füllen</a><br></li>
     <li><a href="#">Bitte füllen</a><br></li>
     <li><a href="#">Bitte füllen</a><br></li>
