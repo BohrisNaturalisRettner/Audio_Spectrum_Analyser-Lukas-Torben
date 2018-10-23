@@ -20,7 +20,6 @@
   <li><a href="#">Lötkolben und Lötzinn</a></li>
   <li><a href="https://www.conrad.de/de/tru-components-su528455-europlatine-ohne-cu-auflage-hartpapier-l-x-b-160-mm-x-100-mm-rastermass-254-mm-inhalt-1-st-1566655.html">Lochrasterplatine</a></li><br>
   </details>
-
 <details>
   <summary>Passive Bauelemente</summary>
   <li><a color="#FFFFFF" href="https://www.conrad.de/de/keramik-kondensator-radial-bedrahtet-100-nf-100-vdc-10-holystone-rdcx104k101dka-1-st-531746.html">2x 100nF Keramik-Kondensatoren</a></li>
@@ -32,7 +31,7 @@
 <details>
   <summary>Aktive Bauelemente</summary>
   <li><a href="https://www.conrad.de/de/diotec-transistor-bjt-diskret-bc548c-to-92-1-npn-155039.html">49x NPN Transistoren</a></li>
-  <li><a href="">50x LEDs</a></li>
+  <li><a href="">50x LEDs</a></li><br>
 </details>
 
 ### Bauteile
