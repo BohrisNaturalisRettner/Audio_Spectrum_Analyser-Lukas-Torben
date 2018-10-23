@@ -170,6 +170,22 @@ Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor versc
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/47381631-bfa47c80-d700-11e8-978a-600b845e36c2.png" width="600px"></p>
 
+
+* Red 
+  + Green 
+        * dark  green 
+        * lime  
+        - Blue      
+            1. Item one
+                1. subitem 1
+                1. subitem 2
+           
+
+          
+
+            
+
+
 ### Quellen
 
 - https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
