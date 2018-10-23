@@ -12,6 +12,7 @@ Arbeitsgeräte
 
 
 Passive Bauelemente
+<hr width="90%">
 <ul>
   <li>
      <a color="#FFFFFF" href="https://www.conrad.de/de/keramik-kondensator-radial-bedrahtet-100-nf-100-vdc-10-holystone-rdcx104k101dka-1-st-531746.html">2x 100nF Keramik-Kondensatoren</a>
@@ -23,8 +24,8 @@ Passive Bauelemente
   <li>1x 200kOhm Widerstand</li>
 </ul>
 Aktive Bauelemente 
-- 49x NPN Transistoren 
-- 50x LEDs
+  <li><a href="">49x NPN Transistoren</a></li>
+  <li><a href="">50x LEDs</a></li>
 
 ### Bauteile
 Als Arduino wird in diesem Fall der Elegoo Mega 2560 mit dem ATmega2560-Controller verwendet. Einerseits aufgrund seines günstigen Preises, andererseits wegen der 500mA Überlastungssicherung. Diese ist besonders beim Einsatz vieler kleiner Bauteile wie LEDs und Transistoren mit vielen möglichen Fehlerquellen, wie den Lötstellen und Kabelverbindungen, nützlich, um den Arduino vor Überlastung bei einem Schaltungsfehler zu schützen
