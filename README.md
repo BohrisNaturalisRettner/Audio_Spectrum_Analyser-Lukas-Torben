@@ -11,7 +11,7 @@
 <li><a href="#">Bitte füllen</a><br></li>
 
 ### Komponentenliste
-<details>
+<details id="komponenten">
   <summary>Arbeitsgeräte</summary>
   <li><a href="https://www.conrad.de/de/arduino-board-mega-2560-a000067-191790.html">Arduino Mega</a></li>
   <li><a href="https://www.conrad.de/de/linear-ic-audio-spezialanwendungen-msgeq7-kfz-audio-consumer-audio-automotive-audio-media-player-dip-8-1436444.html">MSGEQ7-Mikrocontroller</a></li>
