@@ -172,14 +172,9 @@ Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor versc
 
 
 * Red 
-  + Green 
-        * dark  green 
-        * lime  
-        - Blue      
-            1. Item one
-                1. subitem 1
-                1. subitem 2
-           
+  + Green
+       
+       
 
           
 
