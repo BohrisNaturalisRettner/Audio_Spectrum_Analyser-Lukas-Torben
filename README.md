@@ -35,6 +35,7 @@
   <li><a href="https://www.conrad.de/de/diotec-transistor-bjt-diskret-bc548c-to-92-1-npn-155039.html">49x NPN Transistoren</a></li>
   <li><a href="">50x LEDs</a></li><br>
 </details>
+
 ## Bauelemente und Installation
 ### Bauelemente
 
