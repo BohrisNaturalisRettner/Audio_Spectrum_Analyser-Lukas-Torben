@@ -4,9 +4,9 @@
 ### Inhaltsverzeichnis 
 <ul>
   <li><a href="#komponenten">Komponentenliste</a><br>
-    <ol>
+    <li>
     <a href="#software">Software</a><br>
-    </ol>
+  </li>>
   </li>
 <a href="#">Bitte füllen</a><br>
 
