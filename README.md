@@ -170,7 +170,7 @@ Vor Programmstart werden noch einmal beide Pins auf Low gesetzt. Das dient dazu,
   digitalWrite(reset, LOW);
   digitalWrite(strope, LOW);
 ```
-Wie nun im Diagramm zu sehen, muss zu Beginn des Programmes ein Reset-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden mann, kann diese ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden, sobald der Reset durchgeführt wurde. Beides lässt sich mit folgenden Zeilen bewerkstelligen
+Wie nun im Diagramm zu sehen, muss zu Beginn des Programmes ein Reset-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden, sobald der Reset durchgeführt wurde. Beides lässt sich mit folgenden Zeilen bewerkstelligen
 ``` 
   // MSGEQ7 wie im DataSheet genannt reset'en
   digitalWrite(reset, HIGH);                    //
