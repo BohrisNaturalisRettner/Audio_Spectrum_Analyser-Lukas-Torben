@@ -1,8 +1,9 @@
 # Arduino Mega Audio Equalizer mit dem MSGEQ7 
-## Torben, Lukas
+### Torben, Lukas
 
 ### Komponentenliste
 
+Arbeitsgeräte
 - Arduino Mega
 - MSGEQ7-Mikrocontroller
 - Steckbrett mit Jumper-Kabeln
@@ -10,16 +11,15 @@
 - Lötkolben
 
 Passive Bauelemente
-
 - 2x 100nF Keramik-Kondensatoren
 - 1x 33pF Keramik-Kondensator
 - 1x 10nF Keramik-Kondensator
 - 1x 200kOhm Widerstand
 
 Aktive Bauelemente 
+- 49x NPN Transistoren 
+- 50x LEDs
 
-- BITTE NOCH EINFÜGEN
-- BITTE NOCH EINFÜGEN
 ### Bauteile
 Als Arduino wird in diesem Fall der Elegoo Mega 2560 mit dem ATmega2560-Controller verwendet. Einerseits aufgrund seines günstigen Preises, andererseits wegen der 500mA Überlastungssicherung. Diese ist besonders beim Einsatz vieler kleiner Bauteile wie LEDs und Transistoren mit vielen möglichen Fehlerquellen, wie den Lötstellen und Kabelverbindungen, nützlich, um den Arduino vor Überlastung bei einem Schaltungsfehler zu schützen
 
