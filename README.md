@@ -176,9 +176,6 @@ Wie zu sehen, muss zu Beginn des Programmes ein Reset-Puls geschaltetet werden. 
 
 ```        
 
-          
-
-            
 
 
 ### Quellen
