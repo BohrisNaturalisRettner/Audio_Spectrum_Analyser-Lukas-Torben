@@ -2,8 +2,12 @@
 ### Torben, Lukas
 
 ### Inhaltsverzeichnis 
-<a href="#komponenten">Komponentenliste</a><br>
-<a href="#software">Software</a><br>
+<ul>
+  <li><a href="#komponenten">Komponentenliste</a><br>
+    <ol>
+    <a href="#software">Software</a><br>
+    </ol>
+  </li>
 <a href="#">Bitte füllen</a><br>
 
 ### Komponentenliste
