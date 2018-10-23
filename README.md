@@ -165,11 +165,16 @@ Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor versc
 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/47381631-bfa47c80-d700-11e8-978a-600b845e36c2.png" width="600px"></p>
 
+Wie zu sehen, muss zu Beginn des Programmes ein Reset-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden mann, kann diese ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden, sobald der Reset durchgeführt wurde. Beides lässt sich mit folgenden Zeilen bewerkstelligen
+``` 
+  // MSGEQ7 wie im DataSheet genannt reset'en
+  digitalWrite(reset, HIGH);                    //
+  delay(1);                                     //
+  digitalWrite(reset, LOW);                     //  
+  digitalWrite(strobe, HIGH);
+  delay(1);
 
-* Red 
-  + Green
-       
-       
+```        
 
           
 
