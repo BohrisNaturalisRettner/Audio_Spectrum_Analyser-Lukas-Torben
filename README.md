@@ -12,8 +12,8 @@ Arbeitsgeräte
 
 
 Passive Bauelemente
-<ul color="black">
-  <li><a href="https://www.conrad.de/de/diotec-transistor-bjt-diskret-bc548c-to-92-1-npn-155039.html">2x 100nF Keramik-Kondensatoren</a></li>
+<ul>
+  <li><a color="black" href="https://www.conrad.de/de/diotec-transistor-bjt-diskret-bc548c-to-92-1-npn-155039.html">2x 100nF Keramik-Kondensatoren</a></li>
   <li>1x 33pF Keramik-Kondensator</li>
   <li>1x 10nF Keramik-Kondensator</li>
   <li>1x 200kOhm Widerstand</li>
