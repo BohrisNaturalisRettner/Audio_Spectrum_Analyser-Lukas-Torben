@@ -1,4 +1,4 @@
-# Arduino Mega Audio Equalizer mit dem MSGEQ7 
+# Arduino Mega Audio Spectrum Analyser mit dem MSGEQ7 
 ### Torben, Lukas
 
 ### Inhaltsverzeichnis 
@@ -6,7 +6,7 @@
   <li><a href="#komponenten">Komponentenliste</a><br>
     <li>
     <a href="#software">Software</a><br>
-  </li>>
+  </li>
   </li>
 <a href="#">Bitte füllen</a><br>
 
