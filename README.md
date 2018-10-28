@@ -5,13 +5,13 @@
   * <a href="#bauundinst">Bauelemente und Installation</a>
     + <a href="#bauelemente">Bauelemente</a>
     + <a href="#installation">Intstallation der Entwicklungsumgebung</a>   
-  * <a href="#hardware">Hardware</a>
+  * <a href="#">Hardware</a>
   * <a href="#software">Software</a>
     + <a href="#setupfunc">Setup Funktion</a>
   * <a href="#">Bitte füllen</a>
   * <a href="#">Bitte füllen</a>
   * <a href="#">Bitte füllen</a>
-  * <a href="#">Bitte füllen</a>
+  * <a href="#">Quellen</a>
 
 <h2 id="komponenten">Komponentenliste</h2>
 <details>
