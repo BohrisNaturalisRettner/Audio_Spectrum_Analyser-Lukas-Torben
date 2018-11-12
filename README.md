@@ -8,6 +8,7 @@
   * <a href="#">Hardware</a>
   * <a href="#software">Software</a>
     + <a href="#setupfunc">Setup Funktion</a>
+    <a href="#loopfunc">Loop-Funktion</a>
   * <a href="#">Bitte füllen</a>
   * <a href="#">Bitte füllen</a>
   * <a href="#">Bitte füllen</a>
