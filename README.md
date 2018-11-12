@@ -111,7 +111,7 @@ Alle zuvor initialisierten Variablen enthalten Pins. Diese müssen nun als Outpu
 ``` 
 Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor verschiedene Signale vom Arduino erhalten. Ein genaues Diagramm dazu ist im Datasheet des Mikrocontrollers zu finden: 
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/47381631-bfa47c80-d700-11e8-978a-600b845e36c2.png" width="600px"></p>
+<p id="timing" align="center"><img src="https://user-images.githubusercontent.com/42578917/47381631-bfa47c80-d700-11e8-978a-600b845e36c2.png" width="600px"></p>
 
 Vor Programmstart werden noch einmal beide Pins auf Low gesetzt. Das dient dazu, dass bei neustart des Programmes beide Pins auch wirklich keine Spannung ausgeben:
 ``` 
@@ -135,9 +135,17 @@ delayMicroseconds(500);
 ```  
 <h4 id="loopfunc">Die Loop-Funktion</h4>
 
-Hallo isch bin MArcleeeel Cavia 
+Innerhalb des Arduino Programms ist die zweite Funktion die Loop-Funktion. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Wie dem Strope-Timing-Diagramm zu entnehmen <a href="#timing">(hier)</a>, gibt der MSGEQ7 die Wert
 
-
+```
+for(int c = 0; c < 7; c++) {
+		digitalWrite(strobe, LOW);
+		delayMicroseconds(500);
+		freq[c] = analogRead(analog);
+		digitalWrite(strobe, HIGH);
+		delayMicroseconds(500);
+	}
+``` 
 
 ### Quellen
 
