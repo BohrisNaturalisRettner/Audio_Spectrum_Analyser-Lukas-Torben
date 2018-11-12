@@ -131,9 +131,11 @@ delayMicroseconds(500);
 digitalWrite(reset, LOW);
 digitalWrite(strobe, HIGH);
 delayMicroseconds(500);
-}
 
 ```  
+<h4 id="loopfunc">Die Loop-Funktion</h4>
+
+Hallo isch bin MArcleeeel Cavia 
 
 
 
