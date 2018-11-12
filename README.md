@@ -135,7 +135,7 @@ delayMicroseconds(500);
 ```  
 <h4 id="loopfunc">Die Loop-Funktion</h4>
 
-Innerhalb des Arduino Programms ist die zweite Funktion die Loop-Funktion. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Wie dem Strope-Timing-Diagramm zu entnehmen <a href="#timing">(hier)</a>, gibt der MSGEQ7 die Wert
+Innerhalb des Arduino Programms ist die zweite Funktion die Loop-Funktion. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Wie dem <a href="#timing">Strope-Timing-Diagramm zu entnehmen</a>, gibt der MSGEQ7 die Wert
 
 ```
 for(int c = 0; c < 7; c++) {
