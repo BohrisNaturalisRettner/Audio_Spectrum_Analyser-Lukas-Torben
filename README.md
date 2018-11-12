@@ -84,6 +84,15 @@ int strope = 13;      // setzt die Zahl des Pins für den Strope-Impuls
 int reset = 12;       // setzt die Zahl des Pins für den Reset-Impuls
 int analog;          // integer zum zählen bis 7 um die 7 frequenzen auszugeben
 int freq[7]         // array mit 7 stellen, um die 7 werte für die frequenzen darin zu speichern
+
+int VerticalOne[7] = {#,#,#,#,#,#,#};
+int VerticalTwo[7] = {#,#,#,#,#,#,#};
+int VerticalThree[7] = {#,#,#,#,#,#,#};
+int VerticalFour[7] = {#,#,#,#,#,#,#};
+int VerticalFive[7] = {#,#,#,#,#,#,#};
+int VerticalSix[7] = {#,#,#,#,#,#,#};
+int VerticalSeven[7] = {#,#,#,#,#,#,#};
+
 ```
 Die "strope" Variable speichert die Zahl des Pins, welcher den Puls für den Strope Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Varibale "counter" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen. Die "frequz" Variable ist ein Array, in dem letztlich die Werte für die Frequenzen gespeichert werden. Alle Varibalen sind Integer, da nur Ganzzahlen verwendet werden.
 
@@ -108,17 +117,23 @@ Vor Programmstart werden noch einmal beide Pins auf Low gesetzt. Das dient dazu,
 ``` 
   digitalWrite(reset, LOW);
   digitalWrite(strope, LOW);
+  delayMicroseconds(1000);
 ```
 Wie nun im Diagramm zu sehen, muss zu Beginn des Programmes ein Reset-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden, sobald der Reset durchgeführt wurde. Beides lässt sich mit folgenden Zeilen bewerkstelligen
 ``` 
   // MSGEQ7 wie im DataSheet genannt reset'en
-  digitalWrite(reset, HIGH);                    //
-  delay(1);                                     //
-  digitalWrite(reset, LOW);                     //  
-  digitalWrite(strobe, HIGH);
-  delay(1);
 
-```        
+digitalWrite(reset, HIGH);
+digitalWrite(strobe, HIGH);
+delayMicroseconds(500);
+digitalWrite(strobe, LOW);
+delayMicroseconds(500);
+digitalWrite(reset, LOW);
+digitalWrite(strobe, HIGH);
+delayMicroseconds(500);
+}
+
+```  
 
 
 
