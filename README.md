@@ -135,18 +135,23 @@ delayMicroseconds(500);
 ```  
 <h4 id="loopfunc">Die Loop-Funktion</h4>
 
-Innerhalb des Arduino Programms ist die zweite Funktion die Loop-Funktion. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Wie dem <a href="#timing">Strope-Timing-Diagramm zu entnehmen</a>, gibt der MSGEQ7 die Wert
+Innerhalb des Arduino Programms ist die zweite Funktion die Loop-Funktion. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von Vorne beginnt, muss die for-Schleife ebenfalls sieben durchläufe haben:
 
 ```
 for(int c = 0; c < 7; c++) {
-		digitalWrite(strobe, LOW);
-		delayMicroseconds(500);
-		freq[c] = analogRead(analog);
-		digitalWrite(strobe, HIGH);
-		delayMicroseconds(500);
-	}
+	//Hier kommt der Inhalt der for-Schleife rein
+}
 ``` 
-
+Wie dem <a href="#timing">Strope-Timing-Diagramm</a>zu entnehmen, gibt der MSGEQ7 die Wert als Folge des LOW-Schaltens des Strobe Pulses aus. Daher wird zu Beginn der For Schleife der strobe-Pin auf Low geschaltet und ein delayMicroseconds eingefügt.
+```
+for(int c = 0; c < 7; c++) {
+	digitalWrite(strobe, LOW);
+	delayMicroseconds(500);
+	freq[c] = analogRead(analog);
+	digitalWrite(strobe, HIGH);
+	delayMicroseconds(500);
+}
+```
 ### Quellen
 
 - https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
