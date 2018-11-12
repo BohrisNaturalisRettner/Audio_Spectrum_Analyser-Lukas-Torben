@@ -142,7 +142,7 @@ for(int c = 0; c < 7; c++) {
 	//Hier kommt der Inhalt der for-Schleife rein
 }
 ``` 
-Wie dem <a href="#timing">Strope-Timing-Diagramm</a>zu entnehmen, gibt der MSGEQ7 die Wert als Folge des LOW-Schaltens des Strobe Pulses aus. Daher wird zu Beginn der For Schleife der strobe-Pin auf Low geschaltet und ein delayMicroseconds eingefügt.
+Wie dem <a href="#timing">Strope-Timing-Diagramm</a> zu entnehmen, gibt der MSGEQ7 die Wert als Folge des LOW-Schaltens des Strobe Pulses aus. Daher wird zu Beginn der For Schleife der strobe-Pin auf Low geschaltet und ein delayMicroseconds eingefügt.
 ```
 for(int c = 0; c < 7; c++) {
 	digitalWrite(strobe, LOW);
