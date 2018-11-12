@@ -97,15 +97,8 @@ Alle zuvor initialisierten Variablen enthalten Pins. Diese müssen nun als Outpu
   pinMode(strobe, OUTPUT);
   pinMode(reset, OUTPUT);
   pinMode(analog, INPUT);
-// und die LED -Variablen:
-pinMode(OnOn, OUTPUT); pinMode(OnTw, OUTPUT); pinMode(OnTh, OUTPUT); pinMode(OnFo, OUTPUT); pinMode(OnFi, OUTPUT); pinMode(OnSi, OUTPUT); 
-pinMode(TwOn, OUTPUT); pinMode(TwTw, OUTPUT); pinMode(TwTh, OUTPUT); pinMode(TwFo, OUTPUT); pinMode(TwFi, OUTPUT); pinMode(TwSi, OUTPUT);
-pinMode(ThOn, OUTPUT); pinMode(ThTw, OUTPUT); pinMode(ThTh, OUTPUT); pinMode(ThFo, OUTPUT); pinMode(ThFi, OUTPUT); pinMode(ThSi, OUTPUT);
-pinMode(FoOn, OUTPUT); pinMode(FoTw, OUTPUT); pinMode(FoTh, OUTPUT); pinMode(FoFo, OUTPUT); pinMode(FoFi, OUTPUT); pinMode(FoSi, OUTPUT);
-pinMode(FiOn, OUTPUT); pinMode(FiTw, OUTPUT); pinMode(FiTh, OUTPUT); pinMode(FiFo, OUTPUT); pinMode(FiFi, OUTPUT); pinMode(FiSi, OUTPUT);
-pinMode(SiOn, OUTPUT); pinMode(FiTw, OUTPUT); pinMode(FiTh, OUTPUT); pinMode(FiFo, OUTPUT); pinMode(FiFi, OUTPUT); pinMode(FiSi, OUTPUT);
-pinMode(SiOn, OUTPUT); pinMode(SiTw, OUTPUT); pinMode(SiTh, OUTPUT); pinMode(SiFo, OUTPUT); pinMode(SiFi, OUTPUT); pinMode(SiSi, OUTPUT);
-pinMode(SeOn, OUTPUT); pinMode(SeTw, OUTPUT); pinMode(SeTh, OUTPUT); pinMode(SeFo, OUTPUT); pinMode(SeFi, OUTPUT); pinMode(SeSi, OUTPUT);
+
+
 ``` 
 Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor verschiedene Signale vom Arduino erhalten. Ein genaues Diagramm dazu ist im Datasheet des Mikrocontrollers zu finden: 
 
