@@ -149,7 +149,6 @@ for(int c = 0; c < 7; c++) {
 	digitalWrite(strobe, LOW);
 	delayMicroseconds(500);	
 }
-
 ```
 Als nächstes wird nach dem delay der Input am Analogen Port ausgelesen, welcher zuvor in der Variable analog gespeichert wurde. Dies passiert mit der Funktion analogRead. Diese hat im return einen int Wert, der an der Stelle c (abhängig davon bei welchem Durchlauf sich die for-schleife befindet) im Array freq gespeichert, das wie c ebenfalls 7 Stellen hat: 
 
