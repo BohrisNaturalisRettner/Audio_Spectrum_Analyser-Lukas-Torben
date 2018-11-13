@@ -169,7 +169,251 @@ for(int c = 0; c < 7; c++) {
 	delayMicroseconds(500);
 }
 ```
+Damit nun die LEDs auch nach den Werten aus dem MSGEQ7 geschaltet werden, muss eine weitere for-Schleife genutzt werden. Nachdem das freq array einmal bis zur 7. Stelle gefüllt wurde, werden in der zweiten for-Schleife die Stellen einzelnd ausgelesen und danach die LED-Reihen geschaltet:
+```
+for(int c = 0; c < 7; c++) {
+	//
+}
+```
+Innerhalb der for-Schleife wird dann mithilfe einer if-Schleife geprüft, in welchem Durchgang sich die for Schleife befindet und je nachdem die zugehörige Stelle im freq[c]-Array aufgerufen und ausgelesen. Dann wird geprüft, wie hoch dieser Wert ist und je nachdem unterschiedlich viele LEDs geschaltet. Dies geschieht mit geschachtelten if-Schleifen:
+```
+for(int c = 0; c < 7; c++) {
+	if(c = 0 and freq[c] > 60) {
+		digitalWrite(VerticalOne[0], HIGH);
+		if(freq[c] > 80) {
+			digitalWrite(VerticalOne[1], HIGH);
+			if(freq[c] > 110) {
+				dititalWrite(VerticalOne[2], HIGH);
+				if(freq[c] > 130) {
+					digitalWrite(VerticalOne[3], HIGH);
+					if(freq[c] >
+			}
+		}	
+	}
+}
+```
+Das wird dann für C: 0-6 widerholt. 
 
+Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder auf LOW geschaltet werden. Dies muss allerdings mit einem kleinen delay ausgeführt werden, damit die LEDs lange genug anbleiben, um sie auch mit dem Auge wahrzunehmen. Es wird also am Ende der for Schleife folgendes eingefügt:
+
+```
+delay(50);
+digitalWrite(VerticalOne, LOW);
+digitalWrite(VerticalTwo, LOW);
+digitalWrite(VerticalThree, LOW);
+digitalWrite(VerticalFour, LOW);
+digitalWrite(VerticalFive, LOW);
+digitalWrite(VerticalSix, LOW);
+digitalWrite(VerticalSeven, LOW);
+```
+Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. Der vollständige CODE sieht dann so aus:
+
+```
+
+int strobe = 13;
+int reset = 14;
+int analog = A1;
+int freq[7];
+
+// LED-Variablen 
+int VerticalOne[7] = {#,#,#,#,#,#,#};
+int VerticalTwo[7] = {#,#,#,#,#,#,#};
+int VerticalThree[7] = {#,#,#,#,#,#,#};
+int VerticalFour[7] = {#,#,#,#,#,#,#};
+int VerticalFive[7] = {#,#,#,#,#,#,#};
+int VerticalSix[7] = {#,#,#,#,#,#,#};
+int VerticalSeven[7] = {#,#,#,#,#,#,#};
+
+void setup() {
+
+pinMode(VerticalOne, OUTPUT):
+pinMode(VerticalTwo, OUTPUT);
+pinMode(VerticalThree, OUTPUT);
+pinMode(VerticalFour, OUTPUT);
+pinMode(VerticalFive, OUTPUT);
+	
+pinMode(strobe, OUTPUT);
+pinMode(reset, OUTPUT);
+pinMode(analog, INPUT);
+
+digitalWrite(strobe, LOW);
+digitalWrite(reset, LOW);
+delayMicroseconds(1000),
+
+digitalWrite(reset, HIGH);
+digitalWrite(strobe, HIGH);
+delayMicroseconds(500);
+digitalWrite(strobe, LOW);
+delayMicroseconds(500);
+digitalWrite(reset, LOW);
+digitalWrite(strobe, HIGH);
+delayMicroseconds(500);
+}
+
+void loop() {
+	for(int c = 0; c < 7; c++) {
+		digitalWrite(strobe, LOW);
+		delayMicroseconds(500);
+		freq[c] = analogRead(analog);
+		digitalWrite(strobe, HIGH);
+		delayMicroseconds(500);
+	}
+	for(int c = 0; c < 7; c++) {
+		serial.print(freq[c]);
+		serial.print("    ");
+		if(c = 0 and freq[c] >= 60) {
+			digitalWrite(VerticalOne[0], HIGH);
+			if(freq[c] >= 80) {
+				digitalWrite(VerticalOne[1], HIGH);
+				if(freq[c] >= 100) {
+					digitalWrite(VerticalOne[2], HIGH);
+					if(freq[c] >= 120) {
+						digitalWrite(VerticalOne[3], HIGH); 
+						if(freq[c] >= 150) {
+							digitalWrite(VerticalOne[4], HIGH);
+							if(freq[c] >= 160) {
+								digitalWrite(VerticalOne[5], HIGH);
+								if(freq[c] >= 200) {
+									digitalWrite(VerticalOne[6], HIGH);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if(c = 1 and freq[c] >= 60) {
+			digitalWrite(VerticalTwo[0], HIGH);
+			if(freq[c] >= 80) {
+				digitalWrite(VerticalTwo[1], HIGH);
+				if(freq[c] >= 100) {
+					digitalWrite(VerticalTwo[2], HIGH);
+					if(freq[c] >= 120) {
+						digitalWrite(VerticalTwo[3], HIGH); 
+						if(freq[c] >= 150) {
+							digitalWrite(VerticalTwo[4], HIGH);
+							if(freq[c] >= 160) {
+								digitalWrite(VerticalTwo[5], HIGH);
+								if(freq[c] >= 200) {
+									digitalWrite(VerticalTwo[6], HIGH);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if(c = 2 and freq[c] >= 60) {
+			digitalWrite(VerticalThree[0], HIGH);
+			if(freq[c] >= 80) {
+				digitalWrite(VerticalThree[1], HIGH);
+				if(freq[c] >= 100) {
+					digitalWrite(VerticalThree[2], HIGH);
+					if(freq[c] >= 120) {
+						digitalWrite(VerticalThree[3], HIGH); 
+						if(freq[c] >= 150) {
+							digitalWrite(VerticalThree[4], HIGH);
+							if(freq[c] >= 160) {
+								digitalWrite(VerticalThree[5], HIGH);
+								if(freq[c] >= 200) {
+									digitalWrite(VerticalThree[6], HIGH);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if(c = 3 and freq[c] >= 60) {
+			digitalWrite(VerticalFour[0], HIGH);
+			if(freq[c] >= 80) {
+				digitalWrite(VerticalFour[1], HIGH);
+				if(freq[c] >= 100) {
+					digitalWrite(VerticalFour[2], HIGH);
+					if(freq[c] >= 120) {
+						digitalWrite(VerticalFour[3], HIGH); 
+						if(freq[c] >= 150) {
+							digitalWrite(VerticalFour[4], HIGH);
+							if(freq[c] >= 160) {
+								digitalWrite(VerticalFour[5], HIGH);
+								if(freq[c] >= 200) {
+									digitalWrite(VerticalFour[6], HIGH);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if(c = 4 and freq[c] >= 60) {
+			digitalWrite(VerticalFive[0], HIGH);
+			if(freq[c] >= 80) {
+				digitalWrite(VerticalFive[1], HIGH);
+				if(freq[c] >= 100) {
+					digitalWrite(VerticalFive[2], HIGH);
+					if(freq[c] >= 120) {
+						digitalWrite(VerticalFive[3], HIGH); 
+						if(freq[c] >= 150) {
+							digitalWrite(VerticalFive[4], HIGH);
+							if(freq[c] >= 160) {
+								digitalWrite(VerticalFive[5], HIGH);
+								if(freq[c] >= 200) {
+									digitalWrite(VerticalFive[6], HIGH);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if(c = 5 and freq[c] >= 60) {
+			digitalWrite(VerticalSix[0], HIGH);
+			if(freq[c] >= 80) {
+				digitalWrite(VerticalSix[1], HIGH);
+				if(freq[c] >= 100) {
+					digitalWrite(VerticalSix[2], HIGH);
+					if(freq[c] >= 120) {
+						digitalWrite(VerticalSix[3], HIGH); 
+						if(freq[c] >= 150) {
+							digitalWrite(VerticalSix[4], HIGH);
+							if(freq[c] >= 160) {
+								digitalWrite(VerticalSix[5], HIGH);
+								if(freq[c] >= 200) {
+									digitalWrite(VerticalSix[6], HIGH);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if(c = 6 and freq[c] >= 60) {
+			digitalWrite(VerticalSeven[0], HIGH);
+			if(freq[c] >= 80) {
+				digitalWrite(VerticalSeven[1], HIGH);
+				if(freq[c] >= 100) {
+					digitalWrite(VerticalSeven[2], HIGH);
+					if(freq[c] >= 120) {
+						digitalWrite(VerticalSeven[3], HIGH); 
+						if(freq[c] >= 150) {
+							digitalWrite(VerticalSeven[4], HIGH);
+							if(freq[c] >= 160) {
+								digitalWrite(VerticalSeven[5], HIGH);
+								if(freq[c] >= 200) {
+									digitalWrite(VerticalSeven[6], HIGH);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	serial.println();
+	delay(50);
+	digitalWrite(LEDS, LOW);	
+}
+```
 ### Quellen
 
 - https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
