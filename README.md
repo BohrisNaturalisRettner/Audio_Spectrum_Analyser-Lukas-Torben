@@ -136,7 +136,7 @@ delayMicroseconds(500);
 ```  
 <h4 id="loopfunc">Die Loop-Funktion</h4>
 
-Innerhalb des Arduino Programms ist die zweite Funktion die Loop-Funktion. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von Vorne beginnt, muss die for-Schleife ebenfalls sieben durchläufe haben:
+Innerhalb des Arduino Programms ist die zweite Funktion die Loop-Funktion. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von Vorne beginnt, muss die for-Schleife ebenfalls sieben durchläufe haben. Dafür wird zu Beginn der For-Schleife die Varibale "c" (für "counter" deklariert und zu Beginn der Schleife als =0 initialisiert. :
 
 ```
 for(int c = 0; c < 7; c++) {
@@ -147,12 +147,30 @@ Wie dem <a href="#timing">Strope-Timing-Diagramm</a> zu entnehmen, gibt der MSGE
 ```
 for(int c = 0; c < 7; c++) {
 	digitalWrite(strobe, LOW);
+	delayMicroseconds(500);	
+}
+
+```
+Als nächstes wird nach dem delay der Input am Analogen Port ausgelesen, welcher zuvor in der Variable analog gespeichert wurde. Dies passiert mit der Funktion analogRead. Diese hat im return einen int Wert, der an der Stelle c (abhängig davon bei welchem Durchlauf sich die for-schleife befindet) im Array freq gespeichert, das wie c ebenfalls 7 Stellen hat: 
+
+```
+for(int c = 0; c < 7; c++) {
+	digitalWrite(strobe, LOW);
+	delayMicroseconds(500);
+	freq[c] = analogRead(analog);
+}
+```
+Zuletzt wird noch der strobe wieder auf HIGH gesetzt und ein delay eingefügt, um die gleiche Ausgangssituation zum Beginn der nächsten Schleife zu schaffen. Die vollständige Schleife sieht dann so aus:
+``` 
+for(int c = 0; c < 7; c++) {
+	digitalWrite(strobe, LOW);
 	delayMicroseconds(500);
 	freq[c] = analogRead(analog);
 	digitalWrite(strobe, HIGH);
 	delayMicroseconds(500);
 }
 ```
+
 ### Quellen
 
 - https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
