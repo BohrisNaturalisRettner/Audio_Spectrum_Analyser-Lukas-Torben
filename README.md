@@ -58,7 +58,7 @@ Sonstige Materialien wie Lochrasterplatine und Litze sind Standart-Elektronik-Ko
 
 Um Programme auf dem Arduino zu installieren, wird eine IDE benötigt. In diesem Fall wird die Arduino IDE Version 1.8.6 für Windows verwendet:
 
-https://www.elegoo.com/tutorial/Arduino%20IDE%20for%20Windows_1.8.6.zip 
+<a href="https://www.elegoo.com/tutorial/Arduino%20IDE%20for%20Windows_1.8.6.zip">https://www.elegoo.com/tutorial/Arduino%20IDE%20for%20Windows_1.8.6.zip</a> 
 
 Nach der Installation erhält man dann folgende Entwicklungsumgebung:
 <br><br>
