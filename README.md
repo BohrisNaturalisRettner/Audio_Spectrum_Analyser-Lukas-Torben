@@ -65,7 +65,7 @@ Nach der Installation erhält man dann folgende Entwicklungsumgebung:
 <br>
 Nun müssen noch unter Tools der Arduino-Typ und Port ausgewählt werden. Anschließend lassen sich mit einem Klick auf den Pfeil oben links Programme auf den Arduino laden
 
-## Hardware
+<h2 id="hardware">Hardware</h2>
 ### MSGEQ7 anschließen
 Damit nun der MSGEQ7 Daten auswirft, muss er korrekt verkabelt werden. Um dies zu tun muss man ins Datasheet für den Mikrocontroller schauen, auf dem man unter Typical Application eine Anleitung findet:
 <br>
