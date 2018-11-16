@@ -36,7 +36,8 @@
   <summary>Aktive Bauelemente</summary>
   <br>
   <li><a href="https://www.conrad.de/de/diotec-transistor-bjt-diskret-bc548c-to-92-1-npn-155039.html">49x NPN Transistoren</a></li>
-  <li><a href="">50x LEDs</a></li><br>
+  <li><a href="https://www.amazon.de/gp/product/B01N45KZIR/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1">99x LEDs (28 rote, 29 grüne, 42 gelbe)</a></li><br>
+
 </details>
 
 <h2 id="bauundinst">Bauelemente und Installation</h2>
