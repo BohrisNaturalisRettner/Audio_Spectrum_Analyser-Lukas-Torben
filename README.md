@@ -10,9 +10,6 @@
   * <a href="#software">Software</a>
     + <a href="#setupfunc">Setup Funktion</a><br>
     + <a href="#loopfunc">Loop-Funktion</a>
-  * <a href="#">Bitte füllen</a>
-  * <a href="#">Bitte füllen</a>
-  * <a href="#">Bitte füllen</a>
   * <a href="#">Quellen</a>
 
 <h2 id="komponenten">Komponentenliste</h2>
