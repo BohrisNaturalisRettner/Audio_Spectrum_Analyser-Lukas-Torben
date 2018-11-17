@@ -10,7 +10,7 @@
   * <a href="#software">Software</a>
     + <a href="#setupfunc">Setup Funktion</a><br>
     + <a href="#loopfunc">Loop-Funktion</a>
-  * <a href="#endproukt">Endprodukt</a>
+  * <a href="#endprodukt">Endprodukt</a>
   * <a href="#quellen">Quellen</a>
 
 <h2 id="komponenten">Komponentenliste</h2>
