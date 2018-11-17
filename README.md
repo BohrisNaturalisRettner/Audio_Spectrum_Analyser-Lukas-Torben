@@ -1,5 +1,7 @@
 ### Torben, Lukas
-# Arduino Mega Audio Spectrum Analyser mit dem MSGEQ7 
+# Arduino Mega Audio Spectrum Analyser mit dem MSGEQ7
+
+<br>
 ## Inhaltsverzeichnis
   * <a href="#komponenten">Komponentenliste</a>
   * <a href="#bauundinst">Bauelemente und Installation</a>
@@ -13,6 +15,7 @@
   * <a href="#endprodukt">Endprodukt</a>
   * <a href="#quellen">Quellen</a>
 
+<br>
 <h2 id="komponenten">Komponentenliste</h2>
 <details>
   <summary>Arbeitsgeräte</summary>
@@ -41,6 +44,7 @@
 
 </details>
 
+<br>
 <h2 id="bauundinst">Bauelemente und Installation</h2>
 <h3 id="bauelemente">Bauelemente</h3>
 
