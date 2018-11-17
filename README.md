@@ -63,7 +63,7 @@ Sonstige Materialien wie Lochrasterplatine und Litze sind <b>Standart-Elektronik
 
 Um Programme auf dem Arduino zu installieren, wird eine IDE benötigt. In diesem Fall wird die <b><a href="https://www.elegoo.com/download"> Arduino IDE Version 1.8.6 </a> </b>für Windows verwendet.
 
-Nach der Installation erhält man dann folgende Entwicklungsumgebung:
+Nach der Installation erhält man dann folgende <b>Entwicklungsumgebung</b>:
 <br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46620749-de621b00-cb25-11e8-87e8-e45f394e590d.png" width="400px" height="350px"></p>
 <br>
@@ -76,7 +76,7 @@ Nun müssen noch unter Tools der Arduino-Typ und Port ausgewählt werden. Anschl
 Damit nun der <b> MSGEQ7</b> Daten auswirft, muss er korrekt verkabelt werden. Um dies zu tun muss man ins <a href="https://www.sparkfun.com/datasheets/Components/General/MSGEQ7.pdf">Datasheet für den Mikrocontroller</a> schauen, auf dem man unter Typical Application eine Anleitung findet:
 <br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46585373-62f26200-ca70-11e8-92b2-6da1fc322290.png" width="300px" align="center"></p>
-Der Reset Pin (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) werden beim Arduino auf einen der PWM-Pins gelegt, in diesem Fall auf Pin 12 und 13. Ausserdem wird der MSGEQ7 von dem 5V Pin sowie dem GND-Pin des Arduino gespeist. Zudem muss der Pin 3 des MSGEQ7, welcher letztlich die Werte für die Frequenzen ausgibt, an einen Analogen Pin des Arduino, in diesem Fall an Pin A0 angeschlossen werden. Zudem muss der Clock Oscillator Pin (Pin 8) über einen 33pF Kondensator und der Ground Pin (Pin 6) über einen 100nF (0.1uF) Kondensator an den Ground Pin des Arduino angeschlossen werden
+Der Reset <b>Pin</b> (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) werden beim Arduino auf einen der PWM-Pins gelegt, in diesem Fall auf Pin 12 und 13. Ausserdem wird der MSGEQ7 von dem 5V Pin sowie dem GND-Pin des Arduino gespeist. Zudem muss der Pin 3 des MSGEQ7, welcher letztlich die Werte für die Frequenzen ausgibt, an einen Analogen Pin des Arduino, in diesem Fall an Pin A0 angeschlossen werden. Zudem muss der Clock Oscillator Pin (Pin 8) über einen 33pF Kondensator und der Ground Pin (Pin 6) über einen 100nF (0.1uF) Kondensator an den Ground Pin des Arduino angeschlossen werden
 <br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png" width="500px"></p>
 <br> 
@@ -84,10 +84,10 @@ Der Reset Pin (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) werden 
 <br>
 <h2 id="software">Software</h2>
 
-Ein Arduino-Programm besteht aus zwei Hauptfunktionen: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 sowie die Schaltung der LEDs werden 4 Variablen benötigt:
+Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 sowie die Schaltung der LEDs werden 4 Variablen benötigt:
 
 ```
-int strope = 13;      // setzt die Zahl des Pins für den Strope-Impuls
+int strobe = 13;      // setzt die Zahl des Pins für den Strope-Impuls
 int reset = 12;       // setzt die Zahl des Pins für den Reset-Impuls
 int analog;          // integer zum zählen bis 7 um die 7 frequenzen auszugeben
 int freq[7]         // array mit 7 stellen, um die 7 werte für die frequenzen darin zu speichern
@@ -101,7 +101,7 @@ int VerticalSix[7] = {#,#,#,#,#,#,#};
 int VerticalSeven[7] = {#,#,#,#,#,#,#};
 
 ```
-Die "strope" Variable speichert die Zahl des Pins, welcher den Puls für den Strope Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Varibale "counter" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen. Die "frequz" Variable ist ein Array, in dem letztlich die Werte für die Frequenzen gespeichert werden. Alle Varibalen sind Integer, da nur Ganzzahlen verwendet werden.
+Die "strobe" <b>Variable</b> speichert die Zahl des Pins, welcher den Puls für den Strobe Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Variable "analog" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen. Die "freq" Variable ist ein Array, in dem letztlich die Werte für die Frequenzen gespeichert werden. Alle Varibalen sind Integer, da nur Ganzzahlen verwendet werden.
 
 Zudem werden die Pins für die LEDs, um sie jeweils später zu verwenden, in integer geschrieben. Dabei wird für jede Led ein Pin-Name, bestehend aus Horizontaler und Vertikaler Reihe verwendet:
 
@@ -120,13 +120,13 @@ Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor versc
 
 <p id="timing" align="center"><img src="https://user-images.githubusercontent.com/42578917/47381631-bfa47c80-d700-11e8-978a-600b845e36c2.png" width="600px"></p>
 
-Vor Programmstart werden noch einmal beide Pins auf Low gesetzt. Das dient dazu, dass bei neustart des Programmes beide Pins auch wirklich keine Spannung ausgeben:
+<b>Vor Programmstart</b> werden noch einmal beide Pins auf Low gesetzt. Das dient dazu, dass bei Neustart des Programmes beide Pins auch wirklich keine Spannung ausgeben:
 ``` 
   digitalWrite(reset, LOW);
   digitalWrite(strope, LOW);
   delayMicroseconds(1000);
 ```
-Wie nun im Diagramm zu sehen, muss zu Beginn des Programmes ein Reset-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden, sobald der Reset durchgeführt wurde. Beides lässt sich mit folgenden Zeilen bewerkstelligen
+Wie nun im Diagramm zu sehen, muss zu Beginn des Programmes ein <b>Reset</b>-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden, sobald der Reset durchgeführt wurde. Beides lässt sich mit folgenden Zeilen bewerkstelligen
 ``` 
   // MSGEQ7 wie im DataSheet genannt reset'en
 
@@ -142,14 +142,14 @@ delayMicroseconds(500);
 ```  
 <h3 id="loopfunc">Die Loop-Funktion</h3>
 
-Innerhalb des Arduino Programms ist die zweite Funktion die Loop-Funktion. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von Vorne beginnt, muss die for-Schleife ebenfalls sieben durchläufe haben. Dafür wird zu Beginn der For-Schleife die Varibale "c" (für "counter" deklariert und zu Beginn der Schleife als =0 initialisiert. :
+Innerhalb des Arduino  Programms ist die zweite Funktion die <b>Loop-Funktion</b>. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von Vorne beginnt, muss die for-Schleife ebenfalls sieben durchläufe haben. Dafür wird zu Beginn der For-Schleife die Varibale "c" (für "counter" deklariert und zu Beginn der Schleife als =0 initialisiert. :
 
 ```
 for(int c = 0; c < 7; c++) {
 	//Hier kommt der Inhalt der for-Schleife rein
 }
 ``` 
-Wie dem <a href="#timing">Strope-Timing-Diagramm</a> zu entnehmen, gibt der MSGEQ7 die Wert als Folge des LOW-Schaltens des Strobe Pulses aus. Daher wird zu Beginn der For Schleife der strobe-Pin auf Low geschaltet und ein delayMicroseconds eingefügt.
+Wie dem <a href="#timing">Strobe-Timing-Diagramm</a> zu entnehmen, gibt der MSGEQ7 die Wert als Folge des LOW-Schaltens des Strobe Pulses aus. Daher wird zu Beginn der For-Schleife der strobe-Pin auf Low geschaltet und ein delayMicroseconds eingefügt.
 ```
 for(int c = 0; c < 7; c++) {
 	digitalWrite(strobe, LOW);
@@ -198,9 +198,9 @@ for(int c = 0; c < 7; c++) {
 	}
 }
 ```
-Das wird dann für C: 0-6 widerholt. 
+Das wird dann für C: 0-6 wiederholt. 
 
-Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder auf LOW geschaltet werden. Dies muss allerdings mit einem kleinen delay ausgeführt werden, damit die LEDs lange genug anbleiben, um sie auch mit dem Auge wahrzunehmen. Es wird also am Ende der for Schleife folgendes eingefügt:
+Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder auf LOW geschaltet werden. Dies muss allerdings mit einem kleinen delay ausgeführt werden, damit die LEDs lange genug anbleiben, um sie auch mit dem Auge wahrzunehmen. Es wird also am Ende der for-Schleife folgendes eingefügt:
 
 ```
 delay(50);
@@ -426,7 +426,7 @@ void loop() {
 <h2 id="endprodukt">Endprodukt</h2>
 
 <a href="https://www.youtube.com/watch?v=AfIOBLr1NDU" target="_blank"><img src="http://img.youtube.com/vi/AfIOBLr1NDU/0.jpg" 
-alt="MY NAME IS JEFF" width="240" height="180" border="10" /></a>
+alt="Video Testlauf" width="240" height="180" border="10" /></a>
 
 <br>
 <h2 id="quellen">Quellen</h2>
