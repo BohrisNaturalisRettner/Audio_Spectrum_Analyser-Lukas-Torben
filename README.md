@@ -73,7 +73,7 @@ Nun müssen noch unter Tools der Arduino-Typ und Port ausgewählt werden. Anschl
 <h2 id="hardware">Hardware</h2>
 
 <h3 id="msgeq">MSGEQ7 anschließen</h3>
-Damit nun der MSGEQ7 Daten auswirft, muss er korrekt verkabelt werden. Um dies zu tun muss man ins <a href="https://www.sparkfun.com/datasheets/Components/General/MSGEQ7.pdf">Datasheet für den Mikrocontroller></a> schauen, auf dem man unter Typical Application eine Anleitung findet:
+Damit nun der MSGEQ7 Daten auswirft, muss er korrekt verkabelt werden. Um dies zu tun muss man ins <a href="https://www.sparkfun.com/datasheets/Components/General/MSGEQ7.pdf">Datasheet für den Mikrocontroller</a> schauen, auf dem man unter Typical Application eine Anleitung findet:
 <br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46585373-62f26200-ca70-11e8-92b2-6da1fc322290.png" width="300px" align="center"></p>
 Der Reset Pin (Pin 7 des MSGEQ7) sowie der Stope Pin (Pin 4 des MSGEQ7) werden beim Arduino auf einen der PWM-Pins gelegt, in diesem Fall auf Pin 12 und 13. Ausserdem wird der MSGEQ7 von dem 5V Pin sowie dem GND-Pin des Arduino gespeist. Zudem muss der Pin 3 des MSGEQ7, welcher letztlich die Werte für die Frequenzen ausgibt, an einen Analogen Pin des Arduino, in diesem Fall an Pin A0 angeschlossen werden. Zudem muss der Clock Oscillator Pin (Pin 8) über einen 33pF Kondensator und der Ground Pin (Pin 6) über einen 100nF (0.1uF) Kondensator an den Ground Pin des Arduino angeschlossen werden
