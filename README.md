@@ -2,7 +2,7 @@
 # Arduino Mega Audio Spectrum Analyser mit dem MSGEQ7
 
 <br>
-## Inhaltsverzeichnis
+<h2>Inhaltsverzeichnis</h2>
   * <a href="#komponenten">Komponentenliste</a>
   * <a href="#bauundinst">Bauelemente und Installation</a>
     + <a href="#bauelemente">Bauelemente</a>
