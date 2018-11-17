@@ -69,7 +69,7 @@ Nach der Installation erhält man dann folgende Entwicklungsumgebung:
 <br>
 Nun müssen noch unter Tools der Arduino-Typ und Port ausgewählt werden. Anschließend lassen sich mit einem Klick auf den Pfeil oben links Programme auf den Arduino laden
 
-<br>
+<br> <br>
 <h2 id="hardware">Hardware</h2>
 
 <h3 id="msgeq">MSGEQ7 anschließen</h3>
