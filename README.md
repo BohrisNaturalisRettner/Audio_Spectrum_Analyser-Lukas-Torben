@@ -59,7 +59,7 @@ Als Kondensatoren werden <b>Keramik-Kondensatoren</b> verwendet, da diese, im ge
 Sonstige Materialien wie Lochrasterplatine und Litze sind <b>Standart-Elektronik-Komponenten</b> ohne besondere Eigenschaften.
 <h3 id="installation">Installation der Entwicklungsumgebung</h3>
 
-Um Programme auf dem Arduino zu installieren, wird eine IDE benötigt. In diesem Fall wird die Arduino IDE Version 1.8.6 für Windows verwendet:
+Um Programme auf dem Arduino zu installieren, wird eine IDE benötigt. In diesem Fall wird die <a href="https://www.elegoo.com/download"> Arduino IDE Version 1.8.6 </a> für Windows verwendet:
 
 <a href="https://www.elegoo.com/download/">https://www.elegoo.com/download/</a> 
 
