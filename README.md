@@ -77,7 +77,6 @@ Der Reset Pin (Pin 7 des MSGEQ7) sowie der Stope Pin (Pin 4 des MSGEQ7) werden b
 <br> 
 
 <h2 id="software">Software</h2>
-<h3 id="programmcode">Programmcode</h3>
 
 Ein Arduino-Programm besteht aus zwei Hauptfunktionen: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 sowie die Schaltung der LEDs werden 4 Variablen benötigt:
 
@@ -100,7 +99,7 @@ Die "strope" Variable speichert die Zahl des Pins, welcher den Puls für den Str
 
 Zudem werden die Pins für die LEDs, um sie jeweils später zu verwenden, in integer geschrieben. Dabei wird für jede Led ein Pin-Name, bestehend aus Horizontaler und Vertikaler Reihe verwendet:
 
-<h4 id="setupfunc">Setup Funktion</h4>
+<h3 id="setupfunc">Setup Funktion</h3>
 Alle zuvor initialisierten Variablen enthalten Pins. Diese müssen nun als Output bzw. Input innerhalb der Setup Funktion des Arduino Programms klassifiziert werden: 
 
 ```
@@ -135,7 +134,7 @@ digitalWrite(strobe, HIGH);
 delayMicroseconds(500);
 
 ```  
-<h4 id="loopfunc">Die Loop-Funktion</h4>
+<h3 id="loopfunc">Die Loop-Funktion</h3>
 
 Innerhalb des Arduino Programms ist die zweite Funktion die Loop-Funktion. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von Vorne beginnt, muss die for-Schleife ebenfalls sieben durchläufe haben. Dafür wird zu Beginn der For-Schleife die Varibale "c" (für "counter" deklariert und zu Beginn der Schleife als =0 initialisiert. :
 
