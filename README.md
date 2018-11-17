@@ -10,8 +10,8 @@
   * <a href="#software">Software</a>
     + <a href="#setupfunc">Setup Funktion</a><br>
     + <a href="#loopfunc">Loop-Funktion</a>
-  * <a href="#">Endprodukt</a>
-  * <a href="#">Quellen</a>
+  * <a href="#endproukt">Endprodukt</a>
+  * <a href="#quellen">Quellen</a>
 
 <h2 id="komponenten">Komponentenliste</h2>
 <details>
@@ -415,12 +415,12 @@ void loop() {
 }
 ```
 
-### Endprodukt
+<h2 id="endprodukt">Endprodukt</h2>
 
 <a href="https://www.youtube.com/watch?v=AfIOBLr1NDU" target="_blank"><img src="http://img.youtube.com/vi/AfIOBLr1NDU/0.jpg" 
 alt="MY NAME IS JEFF" width="240" height="180" border="10" /></a>
 
-### Quellen
+<h2 id="quellen">Quellen</h2>
 
 - https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
 - https://www.sparkfun.com/datasheets/Components/General/MSGEQ7.pdf
