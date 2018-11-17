@@ -69,6 +69,7 @@ Nach der Installation erhält man dann folgende Entwicklungsumgebung:
 <br>
 Nun müssen noch unter Tools der Arduino-Typ und Port ausgewählt werden. Anschließend lassen sich mit einem Klick auf den Pfeil oben links Programme auf den Arduino laden
 
+<br>
 <h2 id="hardware">Hardware</h2>
 
 <h3 id="msgeq">MSGEQ7 anschließen</h3>
@@ -80,6 +81,7 @@ Der Reset Pin (Pin 7 des MSGEQ7) sowie der Stope Pin (Pin 4 des MSGEQ7) werden b
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png" width="500px"></p>
 <br> 
 
+<br>
 <h2 id="software">Software</h2>
 
 Ein Arduino-Programm besteht aus zwei Hauptfunktionen: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 sowie die Schaltung der LEDs werden 4 Variablen benötigt:
@@ -419,11 +421,14 @@ void loop() {
 }
 ```
 </details>
+
+<br>
 <h2 id="endprodukt">Endprodukt</h2>
 
 <a href="https://www.youtube.com/watch?v=AfIOBLr1NDU" target="_blank"><img src="http://img.youtube.com/vi/AfIOBLr1NDU/0.jpg" 
 alt="MY NAME IS JEFF" width="240" height="180" border="10" /></a>
 
+<br>
 <h2 id="quellen">Quellen</h2>
 
 - https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
