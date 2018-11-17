@@ -80,7 +80,7 @@ Der Reset <b>Pin</b> (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) 
 <br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png" width="500px"></p>
 <br> 
-
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/48664943-b95ab380-eaa6-11e8-9e94-0122e625ff89.jpeg" width="500px"></p>
 <br>
 <h2 id="software">Software</h2>
 
