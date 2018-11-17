@@ -67,7 +67,7 @@ Nach der Installation erhält man dann folgende Entwicklungsumgebung:
 <br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46620749-de621b00-cb25-11e8-87e8-e45f394e590d.png" width="400px" height="350px"></p>
 <br>
-Nun müssen noch unter Tools der Arduino-Typ und Port ausgewählt werden. Anschließend lassen sich mit einem Klick auf den Pfeil oben links Programme auf den Arduino laden
+Nun müssen noch unter Tools der Arduino-Typ und Port ausgewählt werden. Anschließend lassen sich mit einem Klick auf den Pfeil oben links Programme auf den Arduino laden.
 
 <br> <br>
 <h2 id="hardware">Hardware</h2>
