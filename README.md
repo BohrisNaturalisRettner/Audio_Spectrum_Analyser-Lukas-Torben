@@ -215,7 +215,8 @@ digitalWrite(VerticalFive, LOW);
 digitalWrite(VerticalSix, LOW);
 digitalWrite(VerticalSeven, LOW);
 ```
-Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. <details> <summary> Der vollständige CODE sieht dann so aus:</summary>
+Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. 
+<p align="center"><details> <summary> Der vollständige CODE sieht dann so aus:</summary>
 
 ```
 
@@ -423,7 +424,7 @@ void loop() {
 	digitalWrite(LEDS, LOW);	
 }
 ```
-</details>
+</details></p>
 
 <br>
 <h2 id="endprodukt">Endprodukt</h2>
