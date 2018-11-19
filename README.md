@@ -216,7 +216,7 @@ digitalWrite(VerticalSix, LOW);
 digitalWrite(VerticalSeven, LOW);
 ```
 Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. 
-<p align="center"><details><b><summary> Der vollständige CODE sieht dann so aus:</summary></b></p>
+<details><b><summary> Der vollständige CODE sieht dann so aus:</summary></b>
 
 ```
 
