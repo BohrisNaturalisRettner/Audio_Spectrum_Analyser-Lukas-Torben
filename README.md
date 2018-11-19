@@ -87,26 +87,26 @@ Die Schaltung wird dann auf eine Lochrasterplatine gebracht und verlötet. Wenn 
 
 Nachdem nun die Hardware konfiguriert wurde, kann die Software geschrieben werden. 
 
-Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 sowie die Schaltung der LEDs werden 4 Variablen benötigt:
+Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 sowie die Schaltung der LEDs werden folgende Variablen benötigt:
 
 ```
 int strobe = 13;      // setzt die Zahl des Pins für den Strope-Impuls
 int reset = 12;       // setzt die Zahl des Pins für den Reset-Impuls
-int analog;          // integer zum zählen bis 7 um die 7 frequenzen auszugeben
-int freq[7]         // array mit 7 stellen, um die 7 werte für die frequenzen darin zu speichern
+int analog = A0;          // integer zum zählen bis 7 um die 7 frequenzen auszugeben
+int freq[7];         // array mit 7 stellen, um die 7 werte für die frequenzen darin zu speichern
 
-int VerticalOne[7] = {#,#,#,#,#,#,#};
-int VerticalTwo[7] = {#,#,#,#,#,#,#};
-int VerticalThree[7] = {#,#,#,#,#,#,#};
-int VerticalFour[7] = {#,#,#,#,#,#,#};
-int VerticalFive[7] = {#,#,#,#,#,#,#};
-int VerticalSix[7] = {#,#,#,#,#,#,#};
-int VerticalSeven[7] = {#,#,#,#,#,#,#};
+int VerticalOne[6] = {1, 2, 3, 4, 5, 6, 7};
+int VerticalTwo[6] = {8, 9, 10, 11, 22, 23};
+int VerticalThree[6] = {24, 25, 26, 27, 28, 29};
+int VerticalFour[6] = {30, 31, 32, 33, 34, 35};
+int VerticalFive[6] = {36, 37, 38, 39, 40, 41};
+int VerticalSix[6] = {42, 43, 44, 45, 46, 47};
+int VerticalSeven[6] = {48, 49, 50, 51, 52, 53};
 
 ```
 Die "strobe" <b>Variable</b> speichert die Zahl des Pins, welcher den Puls für den Strobe Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Variable "analog" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen. Die "freq" Variable ist ein Array, in dem letztlich die Werte für die Frequenzen gespeichert werden. Alle Varibalen sind Integer, da nur Ganzzahlen verwendet werden.
 
-Zudem werden die Pins für die LEDs, um sie jeweils später zu verwenden, in integer geschrieben. Dabei wird für jede Led ein Pin-Name, bestehend aus Horizontaler und Vertikaler Reihe verwendet:
+Zudem werden die Pins für die LEDs, um sie jeweils später zu verwenden, in integer geschrieben. Für jede Verticale Reihe wird ein Array initiiert, das sechs Pins speichert. 
 
 <h3 id="setupfunc">Setup Funktion</h3>
 Alle zuvor initialisierten Variablen enthalten Pins. Diese müssen nun als Output bzw. Input innerhalb der Setup Funktion des Arduino Programms klassifiziert werden: 
