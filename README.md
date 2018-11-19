@@ -194,7 +194,7 @@ if(freq[0] > 60) {
 ```
 Das wird dann für C: 0-6 wiederholt. 
 
-Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder auf LOW geschaltet werden. Dies muss allerdings mit einem kleinen delay ausgeführt werden, damit die LEDs lange genug anbleiben, um sie auch mit dem Auge wahrzunehmen. 
+Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder auf LOW geschaltet werden. Dies muss allerdings mit einem kleinen delay ausgeführt werden, damit die LEDs lange genug anbleiben, um sie auch mit dem Auge wahrzunehmen. <br>
 <details><summary>Es wird also am Ende der IF-Schleifen folgendes eingefügt:</summary>
 
 ```
@@ -247,214 +247,223 @@ Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder
   digitalWrite(47, LOW);
   digitalWrite(2, LOW);
 ```
-</details>
+</details><br>
 Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. 
 <details><summary><b> Der vollständige CODE sieht dann so aus:</b></summary>
 
 ```
+int strobe = 12;    // Strobe Pin on the MSGEQ7
+int reset = 13;    // Reset Pin on the MSGEQ7
+int analog = A1;   // Output Pin on the MSGEQ7
+int freq[7];          // An array to hold the values from the 7 frequency bands
 
-int strobe = 13;
-int reset = 14;
-int analog = A1;
-int freq[7];
+void setup() { 
+  Serial.begin (9600); 
+  pinMode(strobe, OUTPUT);
+  pinMode(reset, OUTPUT);
+  pinMode(analog, INPUT);
 
-// LED-Variablen 
-int VerticalOne[7] = {#,#,#,#,#,#,#};
-int VerticalTwo[7] = {#,#,#,#,#,#,#};
-int VerticalThree[7] = {#,#,#,#,#,#,#};
-int VerticalFour[7] = {#,#,#,#,#,#,#};
-int VerticalFive[7] = {#,#,#,#,#,#,#};
-int VerticalSix[7] = {#,#,#,#,#,#,#};
-int VerticalSeven[7] = {#,#,#,#,#,#,#};
+  digitalWrite(strobe, LOW);
+  digitalWrite(reset, LOW);
+  delayMicroseconds(500),
 
-void setup() {
+  digitalWrite(reset, HIGH);
+  digitalWrite(strobe, HIGH);
+  delayMicroseconds(100);
+  digitalWrite(strobe, LOW);
+  delayMicroseconds(100);
+  digitalWrite(reset, LOW);
+  digitalWrite(strobe, HIGH);
+  delayMicroseconds(100);
+  } 
+void loop() {  
+  for (int c = 0; c < 7; c++) {
+    digitalWrite(strobe, LOW);
+    delayMicroseconds(100);
+    freq[c] = analogRead (analog);
+    digitalWrite(strobe, HIGH);
+    delayMicroseconds  (100); 
+  }   
+  for (int c = 0; c < 7; c++) {    
+    Serial.print       (freq[c]);
+    Serial.print       ("   ");  
+    
+  } 
+ 
+   
+   if(freq[0] > 60) {
+      digitalWrite(41, HIGH);
+      if(freq[0] > 80) {
+        digitalWrite(41, HIGH);
+        if(freq[0] > 90) {
+          digitalWrite(39, HIGH); 
+          if(freq[0] > 100) {
+            digitalWrite(43, HIGH);
+            if(freq[0] > 110){
+              digitalWrite(37, HIGH);
+              if(freq[0] > 120) {
+                digitalWrite(35, HIGH);
+              }
+            }
+          }
+        }
+      }      
+   } 
+    if(freq[1] > 60) {
+      digitalWrite(34, HIGH);
+      if(freq[1] > 80) {
+        digitalWrite(40, HIGH);
+        if(freq[1] > 90) {
+          digitalWrite(36, HIGH); 
+          if(freq[1] > 100) {
+            digitalWrite(44, HIGH);
+            if(freq[1] > 110){
+              digitalWrite(38, HIGH);
+              if(freq[1] > 120) {
+                digitalWrite(42, HIGH);
+              }
+            }
+          }
+        }
+      }      
+   }
+   
+    if(freq[2] > 60) {
+      digitalWrite(33, HIGH);
+      if(freq[2] > 80) {
+        digitalWrite(31, HIGH);
+        if(freq[2] > 90) {
+          digitalWrite(29, HIGH); 
+          if(freq[2] > 100) {
+            digitalWrite(27, HIGH);
+            if(freq[2] > 110){
+              digitalWrite(25, HIGH);
+              if(freq[2] > 120) {
+                digitalWrite(23, HIGH);
+              }
+            }
+          }
+        }
+      }      
+   }
+   if(freq[3] > 60) {
+      digitalWrite(49, HIGH);
+      if(freq[3] > 80) {
+        digitalWrite(52, HIGH);
+        if(freq[3] > 90) {
+          digitalWrite(50, HIGH); 
+          if(freq[3] > 100) {
+            digitalWrite(52, HIGH);
+            if(freq[3] > 110){
+              digitalWrite(47, HIGH);
+              if(freq[3] > 120) {
+                digitalWrite(2, HIGH);
+              }
+            }
+          }
+        }
+      }      
+   }
+   if(freq[4] > 60) {
+      digitalWrite(A15, HIGH);
+      if(freq[4] > 80) {
+        digitalWrite(9, HIGH);
+        if(freq[4] > 90) {
+          digitalWrite(48, HIGH); 
+          if(freq[4] > 100) {
+            digitalWrite(46, HIGH);
+            if(freq[4] > 110){
+              digitalWrite(11, HIGH);             
+            }
+          }
+        }
+      }      
+   }
+   if(freq[5] > 60) {
+      digitalWrite(30, HIGH);
+      if(freq[5] > 80) {
+        digitalWrite(28, HIGH);
+        if(freq[5] > 90) {
+          digitalWrite(26, HIGH); 
+          if(freq[5] > 100) {
+            digitalWrite(24, HIGH);
+            if(freq[5] > 110){
+              digitalWrite(22, HIGH);
+              if(freq[5] > 120) {
+                digitalWrite(32, HIGH);
+              }
+            }
+          }
+        }
+      }      
+   } 
+    if(freq[6] > 60) {
+      digitalWrite(51, HIGH);
+      if(freq[5] > 80) {
+        digitalWrite(3, HIGH);
+        if(freq[5] > 90) {
+          digitalWrite(0, HIGH); 
+          if(freq[5] > 100) {
+            digitalWrite(4, HIGH);
+            if(freq[5] > 110){
+              digitalWrite(53, HIGH);
+              if(freq[5] > 120) {
+                digitalWrite(8, HIGH);
+              }
+            }
+          }
+        }
+      }      
+   }
+  Serial.println (); 
+  delay(50);
+  digitalWrite(45, LOW);
+  digitalWrite(41, LOW);
+  digitalWrite(39, LOW);
+  digitalWrite(43, LOW);
+  digitalWrite(37, LOW);
+  digitalWrite(35, LOW);
+   
+  digitalWrite(26, LOW);
+  digitalWrite(24, LOW);
+  digitalWrite(22, LOW);
+  digitalWrite(32, LOW);
+  digitalWrite(30, LOW); 
+  digitalWrite(28, LOW); 
 
-pinMode(VerticalOne, OUTPUT):
-pinMode(VerticalTwo, OUTPUT);
-pinMode(VerticalThree, OUTPUT);
-pinMode(VerticalFour, OUTPUT);
-pinMode(VerticalFive, OUTPUT);
-	
-pinMode(strobe, OUTPUT);
-pinMode(reset, OUTPUT);
-pinMode(analog, INPUT);
+  digitalWrite(33, LOW);
+  digitalWrite(31, LOW);
+  digitalWrite(29, LOW);
+  digitalWrite(27, LOW);
+  digitalWrite(25, LOW);
+  digitalWrite(23, LOW); 
 
-digitalWrite(strobe, LOW);
-digitalWrite(reset, LOW);
-delayMicroseconds(1000),
+  digitalWrite(A15, LOW); 
+  digitalWrite(9, LOW);
+  digitalWrite(48, LOW);
+  digitalWrite(46, LOW);
+  digitalWrite(11, LOW);
+   
+  digitalWrite(42, LOW);
+  digitalWrite(38, LOW);
+  digitalWrite(44, LOW);
+  digitalWrite(40, LOW);
+  digitalWrite(34, LOW);
+  digitalWrite(36, LOW); 
 
-digitalWrite(reset, HIGH);
-digitalWrite(strobe, HIGH);
-delayMicroseconds(500);
-digitalWrite(strobe, LOW);
-delayMicroseconds(500);
-digitalWrite(reset, LOW);
-digitalWrite(strobe, HIGH);
-delayMicroseconds(500);
-}
+  digitalWrite(51, LOW); 
+  digitalWrite(3, LOW);
+  digitalWrite(0, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(53, LOW);
+  digitalWrite(8, LOW);
 
-void loop() {
-	for(int c = 0; c < 7; c++) {
-		digitalWrite(strobe, LOW);
-		delayMicroseconds(500);
-		freq[c] = analogRead(analog);
-		digitalWrite(strobe, HIGH);
-		delayMicroseconds(500);
-	}
-	for(int c = 0; c < 7; c++) {
-		serial.print(freq[c]);
-		serial.print("    ");
-		if(c = 0 and freq[c] >= 60) {
-			digitalWrite(VerticalOne[0], HIGH);
-			if(freq[c] >= 80) {
-				digitalWrite(VerticalOne[1], HIGH);
-				if(freq[c] >= 100) {
-					digitalWrite(VerticalOne[2], HIGH);
-					if(freq[c] >= 120) {
-						digitalWrite(VerticalOne[3], HIGH); 
-						if(freq[c] >= 150) {
-							digitalWrite(VerticalOne[4], HIGH);
-							if(freq[c] >= 160) {
-								digitalWrite(VerticalOne[5], HIGH);
-								if(freq[c] >= 200) {
-									digitalWrite(VerticalOne[6], HIGH);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		if(c = 1 and freq[c] >= 60) {
-			digitalWrite(VerticalTwo[0], HIGH);
-			if(freq[c] >= 80) {
-				digitalWrite(VerticalTwo[1], HIGH);
-				if(freq[c] >= 100) {
-					digitalWrite(VerticalTwo[2], HIGH);
-					if(freq[c] >= 120) {
-						digitalWrite(VerticalTwo[3], HIGH); 
-						if(freq[c] >= 150) {
-							digitalWrite(VerticalTwo[4], HIGH);
-							if(freq[c] >= 160) {
-								digitalWrite(VerticalTwo[5], HIGH);
-								if(freq[c] >= 200) {
-									digitalWrite(VerticalTwo[6], HIGH);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		if(c = 2 and freq[c] >= 60) {
-			digitalWrite(VerticalThree[0], HIGH);
-			if(freq[c] >= 80) {
-				digitalWrite(VerticalThree[1], HIGH);
-				if(freq[c] >= 100) {
-					digitalWrite(VerticalThree[2], HIGH);
-					if(freq[c] >= 120) {
-						digitalWrite(VerticalThree[3], HIGH); 
-						if(freq[c] >= 150) {
-							digitalWrite(VerticalThree[4], HIGH);
-							if(freq[c] >= 160) {
-								digitalWrite(VerticalThree[5], HIGH);
-								if(freq[c] >= 200) {
-									digitalWrite(VerticalThree[6], HIGH);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		if(c = 3 and freq[c] >= 60) {
-			digitalWrite(VerticalFour[0], HIGH);
-			if(freq[c] >= 80) {
-				digitalWrite(VerticalFour[1], HIGH);
-				if(freq[c] >= 100) {
-					digitalWrite(VerticalFour[2], HIGH);
-					if(freq[c] >= 120) {
-						digitalWrite(VerticalFour[3], HIGH); 
-						if(freq[c] >= 150) {
-							digitalWrite(VerticalFour[4], HIGH);
-							if(freq[c] >= 160) {
-								digitalWrite(VerticalFour[5], HIGH);
-								if(freq[c] >= 200) {
-									digitalWrite(VerticalFour[6], HIGH);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		if(c = 4 and freq[c] >= 60) {
-			digitalWrite(VerticalFive[0], HIGH);
-			if(freq[c] >= 80) {
-				digitalWrite(VerticalFive[1], HIGH);
-				if(freq[c] >= 100) {
-					digitalWrite(VerticalFive[2], HIGH);
-					if(freq[c] >= 120) {
-						digitalWrite(VerticalFive[3], HIGH); 
-						if(freq[c] >= 150) {
-							digitalWrite(VerticalFive[4], HIGH);
-							if(freq[c] >= 160) {
-								digitalWrite(VerticalFive[5], HIGH);
-								if(freq[c] >= 200) {
-									digitalWrite(VerticalFive[6], HIGH);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		if(c = 5 and freq[c] >= 60) {
-			digitalWrite(VerticalSix[0], HIGH);
-			if(freq[c] >= 80) {
-				digitalWrite(VerticalSix[1], HIGH);
-				if(freq[c] >= 100) {
-					digitalWrite(VerticalSix[2], HIGH);
-					if(freq[c] >= 120) {
-						digitalWrite(VerticalSix[3], HIGH); 
-						if(freq[c] >= 150) {
-							digitalWrite(VerticalSix[4], HIGH);
-							if(freq[c] >= 160) {
-								digitalWrite(VerticalSix[5], HIGH);
-								if(freq[c] >= 200) {
-									digitalWrite(VerticalSix[6], HIGH);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		if(c = 6 and freq[c] >= 60) {
-			digitalWrite(VerticalSeven[0], HIGH);
-			if(freq[c] >= 80) {
-				digitalWrite(VerticalSeven[1], HIGH);
-				if(freq[c] >= 100) {
-					digitalWrite(VerticalSeven[2], HIGH);
-					if(freq[c] >= 120) {
-						digitalWrite(VerticalSeven[3], HIGH); 
-						if(freq[c] >= 150) {
-							digitalWrite(VerticalSeven[4], HIGH);
-							if(freq[c] >= 160) {
-								digitalWrite(VerticalSeven[5], HIGH);
-								if(freq[c] >= 200) {
-									digitalWrite(VerticalSeven[6], HIGH);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	serial.println();
-	delay(50);
-	digitalWrite(LEDS, LOW);	
+  digitalWrite(49, LOW); 
+  digitalWrite(52, LOW);
+  digitalWrite(50, LOW);
+  digitalWrite(52, LOW);
+  digitalWrite(47, LOW);
+  digitalWrite(2, LOW);
 }
 ```
 </details>
