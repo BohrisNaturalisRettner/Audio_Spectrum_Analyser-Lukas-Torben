@@ -88,7 +88,7 @@ Die Schaltung wird dann auf eine Lochrasterplatine gebracht und verlötet. Wenn 
 
 Nachdem nun die Hardware konfiguriert wurde, kann die Software geschrieben werden. 
 
-Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 sowie die Schaltung der LEDs werden folgende Variablen benötigt:
+Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 werden folgende Variablen benötigt:
 
 ```
 int strobe = 13;      // setzt die Zahl des Pins für den Strope-Impuls
@@ -96,18 +96,8 @@ int reset = 12;       // setzt die Zahl des Pins für den Reset-Impuls
 int analog = A0;          // integer zum zählen bis 7 um die 7 frequenzen auszugeben
 int freq[7];         // array mit 7 stellen, um die 7 werte für die frequenzen darin zu speichern
 
-int VerticalOne[6] = {1, 2, 3, 4, 5, 6, 7};
-int VerticalTwo[6] = {8, 9, 10, 11, 22, 23};
-int VerticalThree[6] = {24, 25, 26, 27, 28, 29};
-int VerticalFour[6] = {30, 31, 32, 33, 34, 35};
-int VerticalFive[6] = {36, 37, 38, 39, 40, 41};
-int VerticalSix[6] = {42, 43, 44, 45, 46, 47};
-int VerticalSeven[6] = {48, 49, 50, 51, 52, 53};
-
 ```
 Die "strobe" <b>Variable</b> speichert die Zahl des Pins, welcher den Puls für den Strobe Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Variable "analog" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen. Die "freq" Variable ist ein Array, in dem letztlich die Werte für die Frequenzen gespeichert werden. Alle Varibalen sind Integer, da nur Ganzzahlen verwendet werden.
-
-Zudem werden die Pins für die LEDs, um sie jeweils später zu verwenden, in integer geschrieben. Für jede Verticale Reihe wird ein Array initiiert, das sechs Pins speichert. 
 
 <h3 id="setupfunc">Setup Funktion</h3>
 Alle zuvor initialisierten Variablen enthalten Pins. Diese müssen nun als Output bzw. Input innerhalb der Setup Funktion des Arduino Programms klassifiziert werden: 
@@ -128,7 +118,7 @@ Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor versc
 ``` 
   digitalWrite(reset, LOW);
   digitalWrite(strope, LOW);
-  delayMicroseconds(1000);
+  delayMicroseconds(500);
 ```
 Wie nun im Diagramm zu sehen, muss zu Beginn des Programmes ein <b>Reset</b>-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden, sobald der Reset durchgeführt wurde. Beides lässt sich mit folgenden Zeilen bewerkstelligen
 ``` 
@@ -136,12 +126,12 @@ Wie nun im Diagramm zu sehen, muss zu Beginn des Programmes ein <b>Reset</b>-Pul
 
 digitalWrite(reset, HIGH);
 digitalWrite(strobe, HIGH);
-delayMicroseconds(500);
+delayMicroseconds(100);
 digitalWrite(strobe, LOW);
-delayMicroseconds(500);
+delayMicroseconds(100);
 digitalWrite(reset, LOW);
 digitalWrite(strobe, HIGH);
-delayMicroseconds(500);
+delayMicroseconds(100);
 
 ```  
 <h3 id="loopfunc">Die Loop-Funktion</h3>
@@ -157,7 +147,7 @@ Wie dem <a href="#timing">Strobe-Timing-Diagramm</a> zu entnehmen, gibt der MSGE
 ```
 for(int c = 0; c < 7; c++) {
 	digitalWrite(strobe, LOW);
-	delayMicroseconds(500);	
+	delayMicroseconds(100);	
 }
 ```
 Als nächstes wird nach dem delay der Input am Analogen Port ausgelesen, welcher zuvor in der Variable analog gespeichert wurde. Dies passiert mit der Funktion analogRead. Diese hat im return einen int Wert, der an der Stelle c (abhängig davon bei welchem Durchlauf sich die for-schleife befindet) im Array freq gespeichert, das wie c ebenfalls 7 Stellen hat: 
@@ -165,7 +155,7 @@ Als nächstes wird nach dem delay der Input am Analogen Port ausgelesen, welcher
 ```
 for(int c = 0; c < 7; c++) {
 	digitalWrite(strobe, LOW);
-	delayMicroseconds(500);
+	delayMicroseconds(100);
 	freq[c] = analogRead(analog);
 }
 ```
@@ -173,49 +163,91 @@ Zuletzt wird noch der strobe wieder auf HIGH gesetzt und ein delay eingefügt, u
 ``` 
 for(int c = 0; c < 7; c++) {
 	digitalWrite(strobe, LOW);
-	delayMicroseconds(500);
+	delayMicroseconds(100);
 	freq[c] = analogRead(analog);
 	digitalWrite(strobe, HIGH);
-	delayMicroseconds(500);
+	delayMicroseconds(100);
 }
 ```
-Damit nun die LEDs auch nach den Werten aus dem MSGEQ7 geschaltet werden, muss eine weitere for-Schleife genutzt werden. Nachdem das freq array einmal bis zur 7. Stelle gefüllt wurde, werden in der zweiten for-Schleife die Stellen einzelnd ausgelesen und danach die LED-Reihen geschaltet:
+Damit nun die LEDs auch nach den Werten aus dem MSGEQ7 geschaltet werden, muss nach der for-Schleife eine IF-Schleife genutzt werden. Nachdem das freq array einmal bis zur 7. Stelle gefüllt wurde, werden die Stellen einzelnd ausgelesen und danach die LED-Reihen geschaltet.
+<br>
+Dann wird mithilfe einer if-Schleife geprüft, in welchem Durchgang sich die for Schleife befindet und je nachdem die zugehörige Stelle im freq[c]-Array aufgerufen und ausgelesen. Dann wird geprüft, wie hoch dieser Wert ist und je nachdem unterschiedlich viele LEDs geschaltet. Dies geschieht mit geschachtelten if-Schleifen:
 ```
-for(int c = 0; c < 7; c++) {
-	//
-}
-```
-Innerhalb der for-Schleife wird dann mithilfe einer if-Schleife geprüft, in welchem Durchgang sich die for Schleife befindet und je nachdem die zugehörige Stelle im freq[c]-Array aufgerufen und ausgelesen. Dann wird geprüft, wie hoch dieser Wert ist und je nachdem unterschiedlich viele LEDs geschaltet. Dies geschieht mit geschachtelten if-Schleifen:
-```
-for(int c = 0; c < 7; c++) {
-	if(c = 0 and freq[c] > 60) {
-		digitalWrite(VerticalOne[0], HIGH);
-		if(freq[c] > 80) {
-			digitalWrite(VerticalOne[1], HIGH);
-			if(freq[c] > 110) {
-				dititalWrite(VerticalOne[2], HIGH);
-				if(freq[c] > 130) {
-					digitalWrite(VerticalOne[3], HIGH);
-					if(freq[c] >
-			}
-		}	
-	}
-}
+if(freq[0] > 60) {
+	digitalWrite(41, HIGH);
+	if(freq[0] > 80) {
+        	digitalWrite(41, HIGH);
+        	if(freq[0] > 90) {
+          		digitalWrite(39, HIGH); 
+          		if(freq[0] > 100) {
+            			digitalWrite(43, HIGH);
+            			if(freq[0] > 110){
+              				digitalWrite(37, HIGH);
+              				if(freq[0] > 120) {
+                				digitalWrite(35, HIGH);
+              				}
+            			}
+          		}
+        	}
+      	}      
+   } 
 ```
 Das wird dann für C: 0-6 wiederholt. 
 
-Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder auf LOW geschaltet werden. Dies muss allerdings mit einem kleinen delay ausgeführt werden, damit die LEDs lange genug anbleiben, um sie auch mit dem Auge wahrzunehmen. Es wird also am Ende der for-Schleife folgendes eingefügt:
+Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder auf LOW geschaltet werden. Dies muss allerdings mit einem kleinen delay ausgeführt werden, damit die LEDs lange genug anbleiben, um sie auch mit dem Auge wahrzunehmen. 
+<details><summary>Es wird also am Ende der IF-Schleifen folgendes eingefügt:</summary>
 
 ```
-delay(50);
-digitalWrite(VerticalOne, LOW);
-digitalWrite(VerticalTwo, LOW);
-digitalWrite(VerticalThree, LOW);
-digitalWrite(VerticalFour, LOW);
-digitalWrite(VerticalFive, LOW);
-digitalWrite(VerticalSix, LOW);
-digitalWrite(VerticalSeven, LOW);
+  delay(50);
+  digitalWrite(45, LOW);
+  digitalWrite(41, LOW);
+  digitalWrite(39, LOW);
+  digitalWrite(43, LOW);
+  digitalWrite(37, LOW);
+  digitalWrite(35, LOW);
+   
+  digitalWrite(26, LOW);
+  digitalWrite(24, LOW);
+  digitalWrite(22, LOW);
+  digitalWrite(32, LOW);
+  digitalWrite(30, LOW); 
+  digitalWrite(28, LOW); 
+
+  digitalWrite(33, LOW);
+  digitalWrite(31, LOW);
+  digitalWrite(29, LOW);
+  digitalWrite(27, LOW);
+  digitalWrite(25, LOW);
+  digitalWrite(23, LOW); 
+
+  digitalWrite(A15, LOW); 
+  digitalWrite(9, LOW);
+  digitalWrite(48, LOW);
+  digitalWrite(46, LOW);
+  digitalWrite(11, LOW);
+   
+  digitalWrite(42, LOW);
+  digitalWrite(38, LOW);
+  digitalWrite(44, LOW);
+  digitalWrite(40, LOW);
+  digitalWrite(34, LOW);
+  digitalWrite(36, LOW); 
+
+  digitalWrite(51, LOW); 
+  digitalWrite(3, LOW);
+  digitalWrite(0, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(53, LOW);
+  digitalWrite(8, LOW);
+
+  digitalWrite(49, LOW); 
+  digitalWrite(52, LOW);
+  digitalWrite(50, LOW);
+  digitalWrite(52, LOW);
+  digitalWrite(47, LOW);
+  digitalWrite(2, LOW);
 ```
+</details>
 Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. 
 <details><summary><b> Der vollständige CODE sieht dann so aus:</b></summary>
 
