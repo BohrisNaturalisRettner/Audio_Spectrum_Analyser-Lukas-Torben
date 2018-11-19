@@ -85,6 +85,8 @@ Die Schaltung wird dann auf eine Lochrasterplatine gebracht und verlötet. Wenn 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/48710165-cba03300-ec07-11e8-9344-279011aea2b7.jpg" width="400px"></p>
 <h2 id="software">Software</h2>
 
+Nachdem nun die Hardware konfiguriert wurde, kann die Software geschrieben werden. 
+
 Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 sowie die Schaltung der LEDs werden 4 Variablen benötigt:
 
 ```
