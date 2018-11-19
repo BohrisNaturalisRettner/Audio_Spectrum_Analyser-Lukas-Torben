@@ -248,7 +248,7 @@ Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder
   digitalWrite(2, LOW);
 ```
 </details><br>
-Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. 
+Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. <br>
 <details><summary><b> Der vollständige CODE sieht dann so aus:</b></summary>
 
 ```
@@ -257,8 +257,7 @@ int reset = 13;    // Reset Pin on the MSGEQ7
 int analog = A1;   // Output Pin on the MSGEQ7
 int freq[7];          // An array to hold the values from the 7 frequency bands
 
-void setup() { 
-  Serial.begin (9600); 
+void setup() {   
   pinMode(strobe, OUTPUT);
   pinMode(reset, OUTPUT);
   pinMode(analog, INPUT);
@@ -284,13 +283,6 @@ void loop() {
     digitalWrite(strobe, HIGH);
     delayMicroseconds  (100); 
   }   
-  for (int c = 0; c < 7; c++) {    
-    Serial.print       (freq[c]);
-    Serial.print       ("   ");  
-    
-  } 
- 
-   
    if(freq[0] > 60) {
       digitalWrite(41, HIGH);
       if(freq[0] > 80) {
