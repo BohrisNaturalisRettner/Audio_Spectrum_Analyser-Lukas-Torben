@@ -80,7 +80,7 @@ Der Reset <b>Pin</b> (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) 
 <br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png" width="500px"></p>
 <br> 
-
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/48710165-cba03300-ec07-11e8-9344-279011aea2b7.jpg" width="400px"></p>
 <h2 id="software">Software</h2>
 
 Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 sowie die Schaltung der LEDs werden 4 Variablen benötigt:
