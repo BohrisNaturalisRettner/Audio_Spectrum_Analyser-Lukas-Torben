@@ -428,7 +428,7 @@ void loop() {
 <br>
 <h2 id="endprodukt">Endprodukt</h2>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/48711879-a3670300-ec0c-11e8-9b8e-edbc1f48ef8a.jpeg" width="400px"></p>
-
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/48711989-efb24300-ec0c-11e8-85c2-862e390c59b5.jpeg" width="400px"></p>
 <br>
 <h2 id="quellen">Quellen</h2>
 
