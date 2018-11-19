@@ -53,9 +53,9 @@ Als Arduino wird in diesem Fall der <b>Elegoo Mega 2560</b> mit dem ATmega2560-C
 
 Um die einzelnen Frequenzen des Audios korrekt darstellen zu können, muss zunächst das vorhandene Audio in seine einzelnen Frequenzen aufgeteilt werden um anschließend Werte für die Stärke der einzelnen Frequenzen auslesen zu können. Beides kann der <b>Mikrocontroller MSGEQ7</b> durchführen. Das Input-Audio wird dabei in 7 verschiedene Frequenzen aufgeteilt und anschließend die Stärke der einzelnen Frequenzen als Spannungswert auf dem Input ausgeben.
 
-Als LEDs werden Standart-Farbige <b>LED Dioden</b> verwendet, welche mit einem <b>NPN Transistor</b> geschaltet werden. Die NPN Transistoren sind besonders für kleine Spannungen (<5V) gut geeignet, weshalb sie nun auch im gegensatz zu Mosfets verwendet werden.
+Als LEDs werden Standart-Farbige <b>LED Dioden</b> verwendet, welche mit einem <b>NPN Transistor</b> geschaltet werden. Die NPN Transistoren sind besonders für kleine Spannungen (<5V) gut geeignet, weshalb sie nun auch im Gegensatz zu Mosfets verwendet werden.
 
-Als Kondensatoren werden <b>Keramik-Kondensatoren</b> verwendet, da diese, im gegensatz zu Elkos in den kleinen Kapazitäten unter 1uF günstig und oft verfügbar sind.
+Als Kondensatoren werden <b>Keramik-Kondensatoren</b> verwendet, da diese, im Gegensatz zu Elkos in den kleinen Kapazitäten unter 1uF günstig und oft verfügbar sind.
 
 Sonstige Materialien wie Lochrasterplatine und Litze sind <b>Standart-Elektronik-Komponenten</b> ohne besondere Eigenschaften.
 
