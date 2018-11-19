@@ -81,7 +81,7 @@ Der Reset <b>Pin</b> (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png" width="500px"></p>
 <br>
 Die Schaltung wird dann auf eine Lochrasterplatine gebracht und verlötet. Wenn alles verlötet und verkabelt ist, sieht es wie folgt aus:
-<br>
+<br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/48710165-cba03300-ec07-11e8-9344-279011aea2b7.jpg" width="400px"></p>
 <h2 id="software">Software</h2>
 
