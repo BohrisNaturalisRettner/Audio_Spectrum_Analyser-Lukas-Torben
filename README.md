@@ -8,7 +8,7 @@ Ein Audio Spectrum Analyzer ist ein Gerät, das Audio neben dem akustischen Eind
 
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/48780230-bdbae280-ecd9-11e8-8181-92e17ee0fbf0.jpg"></p>
 
-Wie zu erkennen, ist Audio aus verschiedenen Frequenzen, oft im Bereich von kHz, aufgebaut. Ein Audio Spectrum Analyzer misst die Stärke bestimmter Frequenzen und gibt diese als visuelles Signal, oft in Form eines Balkens, der entsprechend stark oder schwach ausschlägt
+Wie zu erkennen, ist Audio aus verschiedenen Frequenzen, oft im Bereich von kHz, aufgebaut. Ein Audio Spectrum Analyzer misst die Stärke bestimmter Frequenzen und gibt diese als visuelles Signal, oft in Form eines Balkens, der entsprechend stark oder schwach ausschlägt. 
 
 ## Inhaltsverzeichnis
   * <a href="#komponenten">Komponentenliste</a>
