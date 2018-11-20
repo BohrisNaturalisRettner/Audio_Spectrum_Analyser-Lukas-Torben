@@ -3,6 +3,8 @@
 <br>
 
 ## Inhaltsverzeichnis
+<h1>Das Projekt</h1>
+Ein Audio Spectrum Analyzer ist ein Gerät, das Audio neben dem akustischen Eindruck auch visuell darzustellen. Um zu verstehen, wie das ganze funktioniert, ist es zunächst wichtig, den Aufbau von Audiosignalen zu verstehen:
   * <a href="#komponenten">Komponentenliste</a>
   * <a href="#bauundinst">Bauelemente und Installation</a>
     + <a href="#bauelemente">Bauelemente</a>
