@@ -2,13 +2,15 @@
 # Arduino Mega Audio Spectrum Analyser mit dem MSGEQ7
 <br>
 
-## Inhaltsverzeichnis
+
 <h1>Das Projekt</h1>
 Ein Audio Spectrum Analyzer ist ein Gerät, das Audio neben dem akustischen Eindruck auch visuell darzustellen. Um zu verstehen, wie das ganze funktioniert, ist es zunächst wichtig, den Aufbau von Audiosignalen zu verstehen:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/48780230-bdbae280-ecd9-11e8-8181-92e17ee0fbf0.jpg"></p>
+<p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/48780230-bdbae280-ecd9-11e8-8181-92e17ee0fbf0.jpg"></p>
 
 Wie zu erkennen, ist Audio aus verschiedenen Frequenzen, oft im Bereich von kHz, aufgebaut. Ein Audio Spectrum Analyzer misst die Stärke bestimmter Frequenzen und gibt diese als visuelles Signal, oft in Form eines Balkens, der entsprechend stark oder schwach ausschlägt
+
+## Inhaltsverzeichnis
   * <a href="#komponenten">Komponentenliste</a>
   * <a href="#bauundinst">Bauelemente und Installation</a>
     + <a href="#bauelemente">Bauelemente</a>
