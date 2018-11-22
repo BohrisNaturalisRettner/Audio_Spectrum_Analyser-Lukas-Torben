@@ -8,7 +8,7 @@ Ein Audio Spectrum Analyzer ist ein Gerät, das Audio neben dem akustischen Eind
 
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/48780230-bdbae280-ecd9-11e8-8181-92e17ee0fbf0.jpg"></p>
 
-Wie zu erkennen, ist Audio aus verschiedenen Frequenzen, oft im Bereich von kHz, aufgebaut. Ein Audio Spectrum Analyzer misst die Stärke bestimmter Frequenzen und gibt diese als visuelles Signal, oft in Form eines Balkens, der entsprechend stark oder schwach ausschlägt. 
+Wie zu erkennen, ist Audio aus verschiedenen Frequenzen, oft im Bereich von kHz, aufgebaut. Ein Audio Spectrum Analyzer misst die Stärke bestimmter Frequenzen und gibt diese als visuelles Signal, oft in Form eines Balkens, der entsprechend stark oder schwach ausschlägt. Dieser Analyser tut genau das. Mittels eines Mikrocontrollers werden 7 Frequenzen des eingespeisten Audios durch einen Filter gemessen. Die erhaltenen Werte, werden dann als Spannungswerte an einen Arduino übergeben. Dieser speichert die Werte in einer Variable, liest diese dann aus und schaltet dann je nach höhe des Wertes 1- 6 LEDs, die für alle 7 Frequenzen vorgesehen sind. Die LEDs sind mit Transistoren verbunden, die LED mit dem Ground am Source, der Drain mit dem GND der Spannungsquelle verbunden. Der Arduino schaltet dann nur eine Spannung auf die Base, fungiert also quasi als das Bauteil, was den Lichtschalter umlegt, womit die LED angeht. 
 
 ## Inhaltsverzeichnis
   * <a href="#komponenten">Komponentenliste</a>
