@@ -110,6 +110,11 @@ Mit dieser Hauptplatine ist auch der letzte Teil der Hardware beendet.
 
 Nachdem nun die Hardware konfiguriert wurde, kann die Software geschrieben werden. 
 
+Innerhalb des Programmes muss folgender Ablauf ausgeführt werden.
+1. MSGEQ7 nach dem Datasheet einen Reset und mehrere Strobe-Pulse geben
+2. Analogen Input des Arduino auslesen und Wert in Variable speichern
+3. Variable auslesen und danach die Pins und damit die LEDs schalten 
+
 Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 werden folgende Variablen benötigt: 
 
 ```
@@ -119,18 +124,15 @@ int analog = A0;          // integer zum zählen bis 7 um die 7 frequenzen auszu
 int freq[7];         // array mit 7 stellen, um die 7 werte für die frequenzen darin zu speichern
 
 ```
-Die "strobe" <b>Variable</b> speichert die Zahl des Pins, welcher den Puls für den Strobe Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Variable "analog" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen. Die "freq" Variable ist ein Array, in dem letztlich die Werte für die Frequenzen gespeichert werden. Alle Varibalen sind Integer, da nur Ganzzahlen verwendet werden.
+Die "strobe" <b>Variable</b> speichert die Zahl des Pins, welcher den Puls für den Strobe Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Variable "analog" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen. Die "freq" Variable ist ein Array, in dem letztlich die Werte für die Frequenzen gespeichert werden. Alle Varibalen sind Integer, da nur Ganzzahlen verwendet werden und Integer dafür durch den kleinen Speicherbedarf am besten geeignet sind.
 
 <h3 id="setupfunc">Setup Funktion</h3>
-Alle zuvor initialisierten Variablen enthalten Pins. Diese müssen nun als Output bzw. Input innerhalb der Setup Funktion des Arduino Programms klassifiziert werden: 
+Alle zuvor initialisierten Variablen enthalten Pins. Diese müssen nun als Output bzw. Input innerhalb der Setup Funktion des Arduino Programms klassifiziert werden, damit der Arduino weiß, ob die Pins Input oder Output sind: 
 
 ```
-// Zunächst die MSGEQ7 Variablen
   pinMode(strobe, OUTPUT);
   pinMode(reset, OUTPUT);
   pinMode(analog, INPUT);
-
-
 ``` 
 Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor verschiedene Signale vom Arduino erhalten. Ein genaues Diagramm dazu ist im Datasheet des Mikrocontrollers zu finden: 
 
@@ -142,10 +144,9 @@ Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor versc
   digitalWrite(strope, LOW);
   delayMicroseconds(500);
 ```
-Wie nun im Diagramm zu sehen, muss zu Beginn des Programmes ein <b>Reset</b>-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden, sobald der Reset durchgeführt wurde. Beides lässt sich mit folgenden Zeilen bewerkstelligen
+Wie nun im Diagramm zu sehen, muss zu Beginn des Programmes ein <b>Reset</b>-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden, sobald der Reset durchgeführt wurde. Dieser muss aber, wie im Diagramm zu erkennen, konstant geschaltet werden. Beides lässt sich mit folgenden Zeilen bewerkstelligen:
 ``` 
-  // MSGEQ7 wie im DataSheet genannt reset'en
-
+// MSGEQ7 wie im DataSheet genannt reset'en
 digitalWrite(reset, HIGH);
 digitalWrite(strobe, HIGH);
 delayMicroseconds(100);
@@ -154,8 +155,9 @@ delayMicroseconds(100);
 digitalWrite(reset, LOW);
 digitalWrite(strobe, HIGH);
 delayMicroseconds(100);
-
 ```  
+Die delayMicroseconds - Argumente sorgen dann dafür, das der HIGH, oder eben der LOW, auch eine gewisse Zeit anhält.
+
 <h3 id="loopfunc">Die Loop-Funktion</h3>
 
 Innerhalb des Arduino  Programms ist die zweite Funktion die <b>Loop-Funktion</b>. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von Vorne beginnt, muss die for-Schleife ebenfalls sieben durchläufe haben. Dafür wird zu Beginn der For-Schleife die Varibale "c" (für "counter" deklariert und zu Beginn der Schleife als =0 initialisiert. :
