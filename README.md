@@ -86,7 +86,7 @@ Damit nun der <b> MSGEQ7</b> Daten auswirft, muss er korrekt verkabelt werden. U
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46585373-62f26200-ca70-11e8-92b2-6da1fc322290.png" width="300px" align="center"></p>
 Der Reset <b>Pin</b> (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) werden beim Arduino auf einen der PWM-Pins gelegt, in diesem Fall auf Pin 12 und 13. Ausserdem wird der MSGEQ7 von dem 5V Pin sowie dem GND-Pin des Arduino gespeist. Zudem muss der Pin 3 des MSGEQ7, welcher letztlich die Werte für die Frequenzen ausgibt, an einen Analogen Pin des Arduino, in diesem Fall an Pin A1 angeschlossen werden. Zudem muss der Clock Oscillator Pin (Pin 8) über einen 33pF Kondensator und der Ground Pin (Pin 6) über einen 100nF (0.1uF) Kondensator an den Ground Pin des Arduino angeschlossen werden
 <br><br><br>
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png" width="200px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png" width="500px"></p>
 <br>
 Die Schaltung wird dann auf eine Lochrasterplatine gebracht und verlötet. Wenn alles verlötet und verkabelt ist, sieht es wie folgt aus:
 <br><br>
@@ -99,7 +99,7 @@ Desweiteren müssen die LEDs inklusive Transistoren und Widerständen verlötet 
 Da auf die LEDs direkt draufgesehen werden soll (da ein Analyzer vor allem zum Anschauen gedacht ist) sind die LEDs mit 20mA deutlich zu hell. <a href="https://www.amazon.de/gp/product/B01N45KZIR/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1">Bei diesen LEDs</a> ist eine Reduzierung auf 15mA deutlich ansehnlicher. Nach dem Ohmschen Gesetz ergibt dies einen Widerstand von 133,333333 Ohm. In Verbindung mit den vorhandenen <a href="https://www.amazon.de/gp/product/B01LYGIOW4/ref=oh_aui_detailpage_o04_s01?ie=UTF8&psc=1">Widerständen</a> wird in diesem Fall ein 150Ohm Widerstand verwendet, womit ungefähr ~13mA durch die LEDs fließen. 
 
 Die LEDs werden mit einem Transistor geschaltet. In Verbindung mit dem Vorwiderstand sieht die Schaltung für die Verwendung des NPN Transistors als Schalter so aus: 
-<p align="center"><img src="https://user-images.githubusercontent.com/42578917/48922518-8dc13a00-eea7-11e8-8692-49f0bb404116.png" width="500px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/48922518-8dc13a00-eea7-11e8-8692-49f0bb404116.png" width="200px"></p>
 
 <h2 id="software">Software</h2>
 
