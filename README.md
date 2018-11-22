@@ -28,7 +28,7 @@ Wie zu erkennen, ist Audio aus verschiedenen Frequenzen, oft im Bereich von kHz,
   <br>
   <li><a href="https://www.conrad.de/de/arduino-board-mega-2560-a000067-191790.html">Arduino Mega</a></li>
   <li><a href="https://www.conrad.de/de/linear-ic-audio-spezialanwendungen-msgeq7-kfz-audio-consumer-audio-automotive-audio-media-player-dip-8-1436444.html">MSGEQ7-Mikrocontroller</a></li>
-  <li><a href="#">Steckbrett mit Jumper-Kabeln</a></li>
+  <li><a href="https://www.amazon.de/gp/product/B073X7GZ1P/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1">Steckbrett mit Jumper-Kabeln</a></li>
   <li><a href="#">Multimeter</a></li>
   <li><a href="#">Lötkolben und Lötzinn</a></li>
   <li><a href="https://www.conrad.de/de/tru-components-su528455-europlatine-ohne-cu-auflage-hartpapier-l-x-b-160-mm-x-100-mm-rastermass-254-mm-inhalt-1-st-1566655.html">Lochrasterplatine</a></li><br>
