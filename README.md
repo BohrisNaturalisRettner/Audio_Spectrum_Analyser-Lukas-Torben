@@ -74,11 +74,12 @@ Nach der Installation erhält man dann folgende <b>Entwicklungsumgebung</b>:
 <br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46620749-de621b00-cb25-11e8-87e8-e45f394e590d.png" width="400px" height="350px"></p>
 <br>
-Nun müssen noch unter Tools der Arduino-Typ und Port ausgewählt werden. Anschließend lassen sich mit einem Klick auf den Pfeil oben links Programme auf den Arduino laden.
+Nun müssen noch unter Tools der Arduino-Typ und Port ausgewählt werden. Anschließend lassen sich mit einem Klick auf den Pfeil oben links Programme auf den Arduino laden. Unten ist zudem eine Kommandozeile vorhanden, in der im Falle von Fehlern ein Fehlercode angezeigt wird. Zudem lässt sich unter Werkzeuge der Serielle Monitor öffnen, der in Folge der Verwendung des Serial.print - Arguments die am Arduino Input gemessenen Werte ausgibt. Dies ist besonders für Prototyp-Phasen und Tests sehr sinnvoll, um nachzuvollziehen, ob überhaupt Daten beim Arduino ankommen.
 
+Zuletzt ist noch das Häckchen oben links wichtig. Dieses überprüft den eingegebenen Code und gibt im Zweifelsfall einen Fehler aus. Dies verhindert im Zweifel das Beschädigen von Bauteilen beim Hochladen, wenn fehlerhafter Code verwendet wurde.
 <br> <br>
 <h2 id="hardware">Hardware</h2>
-
+Nach der Installation der Entwicklungsumgebung muss zunächst die Hardware gebaut werden, um zuletzt das Programm zu schreiben. Hierbei sind es der MSGEQ7 und die LEDs, die richtig verkabelt werden müssen.
 <h3 id="msgeq">MSGEQ7 anschließen</h3>
 Damit nun der <b> MSGEQ7</b> Daten auswirft, muss er korrekt verkabelt werden. Um dies zu tun muss man ins <a href="https://www.sparkfun.com/datasheets/Components/General/MSGEQ7.pdf">Datasheet für den Mikrocontroller</a> schauen, auf dem man unter Typical Application eine Anleitung findet:
 <br>
@@ -90,11 +91,15 @@ Der Reset <b>Pin</b> (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) 
 Die Schaltung wird dann auf eine Lochrasterplatine gebracht und verlötet. Wenn alles verlötet und verkabelt ist, sieht es wie folgt aus:
 <br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/48710165-cba03300-ec07-11e8-9344-279011aea2b7.jpg" width="400px"></p>
+
+Desweiteren müssen die LEDs inklusive Transistoren und Widerständen verlötet werden. Die (in diesem Fall blauen) LEDs brauchen eine Spannung von 3V und verbrauchen 20mA. Nach dem Ohm'schen Gesetz U=R x I wird bei einer Versorgungsspannung von 5V, also einem Spannungsabfall von 2V und einem Strombedarf von 20mA, nach R umgestellt R = U/I, ein Widerstand von 100Ohm benötigt
+<p align="center">U = R x I	| :I </p>
+<p align="center">R = U/I</p>
 <h2 id="software">Software</h2>
 
 Nachdem nun die Hardware konfiguriert wurde, kann die Software geschrieben werden. 
 
-Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 werden folgende Variablen benötigt:
+Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 werden folgende Variablen benötigt: 
 
 ```
 int strobe = 13;      // setzt die Zahl des Pins für den Strope-Impuls
