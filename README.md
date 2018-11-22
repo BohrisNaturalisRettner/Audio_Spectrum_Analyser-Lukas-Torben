@@ -101,6 +101,11 @@ Da auf die LEDs direkt draufgesehen werden soll (da ein Analyzer vor allem zum A
 Die LEDs werden mit einem Transistor geschaltet. In Verbindung mit dem Vorwiderstand sieht die Schaltung für die Verwendung des NPN Transistors als Schalter so aus: 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/48922518-8dc13a00-eea7-11e8-8692-49f0bb404116.png" width="200px"></p>
 
+In dieser Konfiguration werden dann alle LEDs mit den jeweils einem Widerstand und einem Transistor auf eine Lochrasterplatine gelötet. Das Kabel von der Base des Transistor wird mit jeweils einem Pin auf dem Arduino verbunden:
+
+<p align="center"><img src="https://user-images.githubusercontent.com/42578917/48922649-8babab00-eea8-11e8-880f-5cbc22d26c3e.jpg" width="500px"></p>
+
+Mit dieser Hauptplatine ist auch der letzte Teil der Hardware beendet.
 <h2 id="software">Software</h2>
 
 Nachdem nun die Hardware konfiguriert wurde, kann die Software geschrieben werden. 
