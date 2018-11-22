@@ -30,15 +30,15 @@ Wie zu erkennen, ist Audio aus verschiedenen Frequenzen, oft im Bereich von kHz,
   <li><a href="https://www.conrad.de/de/linear-ic-audio-spezialanwendungen-msgeq7-kfz-audio-consumer-audio-automotive-audio-media-player-dip-8-1436444.html">MSGEQ7-Mikrocontroller</a></li>
   <li><a href="https://www.amazon.de/gp/product/B073X7GZ1P/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1">Steckbrett mit Jumper-Kabeln</a></li>
   <li><a href="https://www.amazon.de/Multimeter-Widerstand-Messleitung-Messspitzen-Krokodilklemmen/dp/B01N2NI76Y/ref=sr_1_18?ie=UTF8&qid=1542919729&sr=8-18&keywords=multimeter">Multimeter</a></li>
-  <li><a href="#">Lötkolben und Lötzinn</a></li>
+  <li><a href="https://www.amazon.de/Digitale-L%C3%B6tstation-L%C3%B6tkolben-regelbar-Entl%C3%B6tpumpe/dp/B00N7KWIZ0/ref=sr_1_21_sspa?ie=UTF8&qid=1542919761&sr=8-21-spons&keywords=l%C3%B6tkolben&psc=1">Lötkolben und Lötzinn</a></li>
   <li><a href="https://www.conrad.de/de/tru-components-su528455-europlatine-ohne-cu-auflage-hartpapier-l-x-b-160-mm-x-100-mm-rastermass-254-mm-inhalt-1-st-1566655.html">Lochrasterplatine</a></li><br>
   </details>
 <details>
   <summary>Passive Bauelemente</summary>
   <br>
   <li><a href="https://www.conrad.de/de/keramik-kondensator-radial-bedrahtet-100-nf-100-vdc-10-holystone-rdcx104k101dka-1-st-531746.html">2x 100nF Keramik-Kondensatoren</a></li>
-  <li><a href="#">1x 33pF Keramik-Kondensator</a></li>
-  <li><a href="#">1x 10nF Keramik-Kondensator</a></li>
+  <li><a href="https://www.conrad.de/de/keramik-kondensator-radial-bedrahtet-33-pf-100-vdc-5-holystone-rdcn330j101dka-1-st-531789.html">1x 33pF Keramik-Kondensator</a></li>
+  <li><a href="https://www.conrad.de/de/keramik-kondensator-radial-bedrahtet-10-nf-50-vdc-10-holystone-rdc103k050dka-1-st-531889.html">1x 10nF Keramik-Kondensator</a></li>
   <li><a href="https://www.amazon.de/600pcs-Werte-1Ohm-Metallfolie-Widerst%C3%A4nde-Sortiment/dp/B01LYGIOW4/ref=sr_1_4?ie=UTF8&qid=1540302923&sr=8-4&keywords=widerst%C3%A4nde">1x 200kOhm Widerstand</a></li>
   <li><a href="https://www.amazon.de/600pcs-Werte-1Ohm-Metallfolie-Widerst%C3%A4nde-Sortiment/dp/B01LYGIOW4/ref=sr_1_4?ie=UTF8&qid=1540302923&sr=8-4&keywords=widerst%C3%A4nde">1x 22kOhm Widerstand</a></li>
 	<li><a href="https://www.amazon.de/600pcs-Werte-1Ohm-Metallfolie-Widerst%C3%A4nde-Sortiment/dp/B01LYGIOW4/ref=sr_1_4?ie=UTF8&qid=1540302923&sr=8-4&keywords=widerst%C3%A4nde">42x 150Ohm Widerstand</a></li><br>
