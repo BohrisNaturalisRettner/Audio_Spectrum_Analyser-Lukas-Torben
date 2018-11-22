@@ -93,8 +93,13 @@ Die Schaltung wird dann auf eine Lochrasterplatine gebracht und verlötet. Wenn 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/48710165-cba03300-ec07-11e8-9344-279011aea2b7.jpg" width="400px"></p>
 
 Desweiteren müssen die LEDs inklusive Transistoren und Widerständen verlötet werden. Die (in diesem Fall blauen) LEDs brauchen eine Spannung von 3V und verbrauchen 20mA. Nach dem Ohm'schen Gesetz U=R x I wird bei einer Versorgungsspannung von 5V, also einem Spannungsabfall von 2V und einem Strombedarf von 20mA, nach R umgestellt R = U/I, ein Widerstand von 100Ohm benötigt
-<p align="center">U = R x I	| :I </p>
-<p align="center">R = U/I</p>
+<p align="center">U = R x I	| : I </p>
+<p align="center">R = U / I</p>
+
+Da auf die LEDs direkt draufgesehen werden soll (da ein Analyzer vor allem zum Anschauen gedacht ist) sind die LEDs mit 20mA deutlich zu hell. <a href="https://www.amazon.de/gp/product/B01N45KZIR/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1">Bei diesen LEDs</a> ist eine Reduzierung auf 15mA deutlich ansehnlicher. Nach dem Ohmschen Gesetz ergibt dies einen Widerstand von 133,333333 Ohm. In Verbindung mit den vorhandenen <a href="https://www.amazon.de/gp/product/B01LYGIOW4/ref=oh_aui_detailpage_o04_s01?ie=UTF8&psc=1">Widerständen</a> wird in diesem Fall ein 150Ohm Widerstand verwendet, womit ungefähr ~13mA durch die LEDs fließen. 
+
+Die LEDs werden mit einem Transistor geschaltet. In Verbindung mit dem Vorwiderstand sieht die Schaltung für die Verwendung des NPN Transistors als Schalter so aus: 
+
 <h2 id="software">Software</h2>
 
 Nachdem nun die Hardware konfiguriert wurde, kann die Software geschrieben werden. 
