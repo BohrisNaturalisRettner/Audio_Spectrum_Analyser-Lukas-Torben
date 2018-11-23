@@ -495,6 +495,7 @@ Als letztes bleibt nur noch, ein geeignetes Gehäuse für alle Komponenten zu ba
 In diesem Repository lässt sich außerdem der Komplette Code innerhalb der Datei "Audio_Spectrum_Analyser.ino" anschauen oder per Git-Pull ins eigene Repository übertragen. Dies ist eine Arduino IDE Datei, die direkt in der Arduino IDE geöffnet werden und hochgeladen werden kann!
 <h2 id="quellen">Quellen</h2>
 
-- https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
+- https://www.eetimes.com/author.asp?section_id=216&doc_id=1323030
 - https://www.sparkfun.com/datasheets/Components/General/MSGEQ7.pdf
+- https://www.arduino.cc/ 
 
