@@ -275,6 +275,7 @@ Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder
 ```
 </details><br>
 Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. <br>
+
 <details><summary><b> Der vollständige CODE sieht dann so aus:</b></summary>
 
 ```
@@ -484,7 +485,7 @@ void loop() {
   digitalWrite(2, LOW);
 }
 ```
-</details>
+</details><br>
 Die Pins sind dabei, genauso wie beim HIGH schalten, die Pins, an die die jeweiligen LEDs angeschlossen sind.
 <br>
 <h2 id="endprodukt">Endprodukt</h2>
