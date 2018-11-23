@@ -490,7 +490,7 @@ Die Pins sind dabei genauso wie beim HIGH schalten die Pins, an die die jeweilig
 
 Als letztes bleibt nur noch, ein geeignetes Gehäuse für alle Komponenten zu bauen und im Zweifel noch ein bisschen an den Grenzen zu schrauben, an welcher eine bestimmte LED bei einem bestimmten Wert geschaltet wird. Mit den in dieser Anleitung genutzten Komponenten, sieht das Endprodukt dann in Aktion wie folgt aus:
 
-<p align="center"><a href="https://www.youtube.com/watch?v=c1khyxLBbP0&feature=youtu.be"><img src="https://user-images.githubusercontent.com/42578917/48955845-1abfce00-ef50-11e8-8d36-40bc57f555c4.png" width="400px">Link zu einem Video</a></p>
+<p align="center"><a href="https://www.youtube.com/watch?v=c1khyxLBbP0&feature=youtu.be"><img src="https://user-images.githubusercontent.com/42578917/48955845-1abfce00-ef50-11e8-8d36-40bc57f555c4.png" width="400px"><br>Link zu einem Video</a></p>
 
 In diesem Repository lässt sich außerdem der Komplette Code innerhalb der Datei "Audio_Spectrum_Analyser.ino" anschauen oder per Git-Pull ins eigene Repository übertragen. Dies ist eine Arduino IDE Datei, die direkt in der Arduino IDE geöffnet werden und hochgeladen werden kann!
 <h2 id="quellen">Quellen</h2>
