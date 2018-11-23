@@ -489,6 +489,9 @@ Die Pins sind dabei genauso wie beim HIGH schalten die Pins, an die die jeweilig
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/48711879-a3670300-ec0c-11e8-9b8e-edbc1f48ef8a.jpeg" width="400px"></p>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/48711989-efb24300-ec0c-11e8-85c2-862e390c59b5.jpeg" width="400px"></p>
 <br>
+
+
+
 <h2 id="quellen">Quellen</h2>
 
 - https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
