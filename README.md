@@ -274,7 +274,7 @@ Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder
   digitalWrite(2, LOW);
 ```
 </details><br>
-Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. <br>
+Damit werden alle LEDs nach einem kleinen delay wieder auf LOW geschaltet. <br><br>
 
 <details><summary><b> Der vollständige CODE sieht dann so aus:</b></summary>
 
