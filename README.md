@@ -59,11 +59,11 @@ Im folgenden kommt zu diesem Projekt eine <a href="#komponenten">Komponentenlist
 
 Als Arduino wird in diesem Fall der <b>Elegoo Mega 2560</b> mit dem ATmega2560-Controller verwendet. Einerseits aufgrund seines günstigen Preises, andererseits wegen der 500mA Überlastungssicherung. Diese ist besonders beim Einsatz vieler kleiner Bauteile wie LEDs und Transistoren mit vielen möglichen Fehlerquellen, wie den Lötstellen und Kabelverbindungen, nützlich, um den Arduino vor Überlastung bei einem Schaltungsfehler zu schützen
 
-Um die einzelnen Frequenzen des Audios korrekt darstellen zu können, muss zunächst das vorhandene Audio in seine einzelnen Frequenzen aufgeteilt werden um anschließend Werte für die Stärke der einzelnen Frequenzen auslesen zu können. Beides kann der <b>Mikrocontroller MSGEQ7</b> durchführen. Das Input-Audio wird dabei in 7 verschiedene Frequenzen aufgeteilt und anschließend die Stärke der einzelnen Frequenzen als Spannungswert auf dem Input ausgeben.
+Um die einzelnen Frequenzen des Audios korrekt darstellen zu können, muss zunächst das vorhandene Audio in seine einzelnen Frequenzen aufgeteilt werden um anschließend Werte für die Stärke der einzelnen Frequenzen auslesen zu können. Beides kann der <b>Mikrocontroller MSGEQ7</b> durchführen. Das Input-Audio wird dabei in 7 verschiedene Frequenzen aufgeteilt und anschließend die Stärke der einzelnen Frequenzen als Spannungswert auf dem Output ausgeben.
 
-Als LEDs werden Standart-Farbige <b>LED Dioden</b> verwendet, welche mit einem <b>NPN Transistor</b> geschaltet werden. Die NPN Transistoren sind besonders für kleine Spannungen (<5V) gut geeignet, weshalb sie nun auch im Gegensatz zu Mosfets verwendet werden.
+Als LEDs werden standart farbige <b>LED Dioden</b> verwendet, welche mit einem <b>NPN Transistor</b> geschaltet werden. Die NPN Transistoren sind besonders für kleine Spannungen (<5V) gut geeignet, weshalb sie nun auch im Gegensatz zu Mosfets verwendet werden.
 
-Als Kondensatoren werden <b>Keramik-Kondensatoren</b> verwendet, da diese, im Gegensatz zu Elkos in den kleinen Kapazitäten unter 1uF günstig und oft verfügbar sind.
+Als Kondensatoren werden <b>Keramik-Kondensatoren</b> verwendet, da diese, im Gegensatz zu Elkos, in den kleinen Kapazitäten unter 1uF günstig und oft verfügbar sind.
 
 Sonstige Materialien wie Lochrasterplatine und Litze sind <b>Standart-Elektronik-Komponenten</b> ohne besondere Eigenschaften.
 
@@ -78,15 +78,15 @@ Nach der Installation erhält man dann folgende <b>Entwicklungsumgebung</b>:
 <br>
 Nun müssen noch unter Tools der Arduino-Typ und Port ausgewählt werden. Anschließend lassen sich mit einem Klick auf den Pfeil oben links Programme auf den Arduino laden. Unten ist zudem eine Kommandozeile vorhanden, in der im Falle von Fehlern ein Fehlercode angezeigt wird. Zudem lässt sich unter Werkzeuge der Serielle Monitor öffnen, der in Folge der Verwendung des Serial.print - Arguments die am Arduino Input gemessenen Werte ausgibt. Dies ist besonders für Prototyp-Phasen und Tests sehr sinnvoll, um nachzuvollziehen, ob überhaupt Daten beim Arduino ankommen.
 
-Zuletzt ist noch das Häckchen oben links wichtig. Dieses überprüft den eingegebenen Code und gibt im Zweifelsfall einen Fehler aus. Dies verhindert im Zweifel das Beschädigen von Bauteilen beim Hochladen, wenn fehlerhafter Code verwendet wurde.
+Zuletzt ist noch das Häckchen oben links wichtig. Dieses überprüft den eingegebenen Code und gibt im Zweifelsfall einen Fehler aus. Dies verhindert das Beschädigen von Bauteilen beim Hochladen, wenn fehlerhafter Code verwendet wurde.
 <br> <br>
 <h2 id="hardware">Hardware</h2>
-Nach der Installation der Entwicklungsumgebung muss zunächst die Hardware gebaut werden, um zuletzt das Programm zu schreiben. Hierbei sind es der MSGEQ7 und die LEDs, die richtig verkabelt werden müssen.
+Nach der Installation der Entwicklungsumgebung muss zunächst die Hardware gebaut werden um zuletzt das Programm zu schreiben. Hierbei sind es der MSGEQ7 und die LEDs, die richtig verkabelt werden müssen.
 <h3 id="msgeq">MSGEQ7 anschließen</h3>
 Damit nun der <b> MSGEQ7</b> Daten auswirft, muss er korrekt verkabelt werden. Um dies zu tun muss man ins <a href="https://www.sparkfun.com/datasheets/Components/General/MSGEQ7.pdf">Datasheet für den Mikrocontroller</a> schauen, auf dem man unter Typical Application eine Anleitung findet:
 <br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46585373-62f26200-ca70-11e8-92b2-6da1fc322290.png" width="300px" align="center"></p>
-Der Reset <b>Pin</b> (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) werden beim Arduino auf einen der PWM-Pins gelegt, in diesem Fall auf Pin 12 und 13. Ausserdem wird der MSGEQ7 von dem 5V Pin sowie dem GND-Pin des Arduino gespeist. Zudem muss der Pin 3 des MSGEQ7, welcher letztlich die Werte für die Frequenzen ausgibt, an einen Analogen Pin des Arduino, in diesem Fall an Pin A1 angeschlossen werden. Zudem muss der Clock Oscillator Pin (Pin 8) über einen 33pF Kondensator und der Ground Pin (Pin 6) über einen 100nF (0.1uF) Kondensator an den Ground Pin des Arduino angeschlossen werden
+Der Reset <b>Pin</b> (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) werden beim Arduino auf einen der PWM-Pins gelegt, in diesem Fall auf Pin 12 und 13. Ausserdem wird der MSGEQ7 von dem 5V Pin sowie dem GND-Pin des Arduino gespeist. Zudem muss der Pin 3 des MSGEQ7, welcher letztlich die Werte für die Frequenzen ausgibt an einen Analogen Pin des Arduino, in diesem Fall an Pin A1, angeschlossen werden. Zuletzt muss der Clock Oscillator Pin (Pin 8) über einen 33pF Kondensator und der Ground Pin (Pin 6) über einen 100nF (0.1uF) Kondensator an den Ground Pin des Arduino angeschlossen werden
 <br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png" width="500px"></p>
 <br>
@@ -113,20 +113,20 @@ Mit dieser Hauptplatine ist auch der letzte Teil der Hardware beendet.
 Nachdem nun die Hardware konfiguriert wurde, kann die Software geschrieben werden. 
 
 Innerhalb des Programmes muss folgender Ablauf ausgeführt werden.
+
 1. MSGEQ7 nach dem Datasheet einen Reset und mehrere Strobe-Pulse geben
 2. Analogen Input des Arduino auslesen und Wert in Variable speichern
 3. Variable auslesen und danach die Pins und damit die LEDs schalten 
 
-Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Function deklariert. Für den MSGEQ7 werden folgende Variablen benötigt: 
+Ein Arduino-Programm besteht aus zwei <b>Hauptfunktionen</b>: der Setup- und der Loop-Funktion. In der Setup Funktion werden grundlegende Einstellungen getroffen, die vor Programmstart ausgeführt werden müssen. So etwa Pin-Einstellungen und Konfigurationen. Dennoch werden Variablen außerhalb der Setup-Funktion deklariert. Für den MSGEQ7 werden folgende Variablen benötigt: 
 
 ```
 int strobe = 13;      // setzt die Zahl des Pins für den Strope-Impuls
 int reset = 12;       // setzt die Zahl des Pins für den Reset-Impuls
 int analog = A0;          // integer zum zählen bis 7 um die 7 frequenzen auszugeben
 int freq[7];         // array mit 7 stellen, um die 7 werte für die frequenzen darin zu speichern
-
 ```
-Die "strobe" <b>Variable</b> speichert die Zahl des Pins, welcher den Puls für den Strobe Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Variable "analog" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen. Die "freq" Variable ist ein Array, in dem letztlich die Werte für die Frequenzen gespeichert werden. Alle Varibalen sind Integer, da nur Ganzzahlen verwendet werden und Integer dafür durch den kleinen Speicherbedarf am besten geeignet sind.
+Die "strobe" <b>Variable</b> speichert die Zahl des Pins, welcher den Puls für den Strobe Pin am MSGEQ7 ausgibt. Das Gleiche gilt für die "reset" Varibale. Die Variable "analog" dient dazu, später bis 7 hochzuzählen, um alle 7 Frequenzen auszulesen. Die "freq[7]" Variable ist ein Array, in dem letztlich die Werte für die Frequenzen gespeichert werden. Alle Varibalen sind Integer, da nur Ganzzahlen verwendet werden und Integer dafür durch den kleinen Speicherbedarf am besten geeignet sind.
 
 <h3 id="setupfunc">Setup Funktion</h3>
 Alle zuvor initialisierten Variablen enthalten Pins. Diese müssen nun als Output bzw. Input innerhalb der Setup Funktion des Arduino Programms klassifiziert werden, damit der Arduino weiß, ob die Pins Input oder Output sind: 
@@ -140,13 +140,13 @@ Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor versc
 
 <p id="timing" align="center"><img src="https://user-images.githubusercontent.com/42578917/47381631-bfa47c80-d700-11e8-978a-600b845e36c2.png" width="600px"></p>
 
-<b>Vor Programmstart</b> werden noch einmal beide Pins auf Low gesetzt. Das dient dazu, dass bei Neustart des Programmes beide Pins auch wirklich keine Spannung ausgeben:
+<b>Vor Programmstart</b> werden noch einmal beide Pins auf LOW gesetzt. Das dient dazu, dass bei Neustart des Programmes beide Pins auch wirklich keine Spannung ausgeben:
 ``` 
   digitalWrite(reset, LOW);
   digitalWrite(strope, LOW);
   delayMicroseconds(500);
 ```
-Wie nun im Diagramm zu sehen, muss zu Beginn des Programmes ein <b>Reset</b>-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden, sobald der Reset durchgeführt wurde. Dieser muss aber, wie im Diagramm zu erkennen, konstant geschaltet werden. Beides lässt sich mit folgenden Zeilen bewerkstelligen:
+Wie nun im Diagramm zu sehen muss zu Beginn des Programmes ein <b>Reset</b>-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden sobald der Reset durchgeführt wurde. Dieser muss aber, wie im Diagramm zu erkennen, konstant geschaltet werden. Beides lässt sich mit folgenden Zeilen bewerkstelligen:
 ``` 
 // MSGEQ7 wie im DataSheet genannt reset'en
 digitalWrite(reset, HIGH);
@@ -158,11 +158,11 @@ digitalWrite(reset, LOW);
 digitalWrite(strobe, HIGH);
 delayMicroseconds(100);
 ```  
-Die delayMicroseconds - Argumente sorgen dann dafür, das der HIGH, oder eben der LOW, auch eine gewisse Zeit anhält.
+Die delayMicroseconds - Argumente sorgen dann dafür, das der HIGH, oder eben der LOW, auch eine gewisse Zeit anhält. Das dies notwendig ist, ist gut im<a href="#timing">Diagramm</a> zu erkennen.
 
 <h3 id="loopfunc">Die Loop-Funktion</h3>
 
-Innerhalb des Arduino  Programms ist die zweite Funktion die <b>Loop-Funktion</b>. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von Vorne beginnt, muss die for-Schleife ebenfalls sieben durchläufe haben. Dafür wird zu Beginn der For-Schleife die Varibale "c" (für "counter" deklariert und zu Beginn der Schleife als =0 initialisiert. :
+Innerhalb des Arduino  Programms ist die zweite Funktion die <b>Loop-Funktion</b>. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von vorne beginnt, muss die for-Schleife ebenfalls sieben durchläufe haben. Dafür wird zu Beginn der For-Schleife die Varibale "c" (für "counter" deklariert und zu Beginn der Schleife als =0 initialisiert. Mit c < 7 wird die obere Grenze definiert und mittels c++ wird pro Durchlauf c und 1 hochgezählt bis zur oberen Grenze.:
 
 ```
 for(int c = 0; c < 7; c++) {
@@ -176,7 +176,7 @@ for(int c = 0; c < 7; c++) {
 	delayMicroseconds(100);	
 }
 ```
-Als nächstes wird nach dem delay der Input am Analogen Port ausgelesen, welcher zuvor in der Variable analog gespeichert wurde. Dies passiert mit der Funktion analogRead. Diese hat im return einen int Wert, der an der Stelle c (abhängig davon bei welchem Durchlauf sich die for-schleife befindet) im Array freq gespeichert, das wie c ebenfalls 7 Stellen hat: 
+Als nächstes wird nach dem delay der Input am analogen Port ausgelesen, welcher zuvor in der Variable analog gespeichert wurde. Dies passiert mit der Funktion analogRead. Diese hat im return einen int Wert vom MSGEQ7, der an der Stelle c (abhängig davon bei welchem Durchlauf sich die for-schleife befindet) im Array freq gespeichert wird, das wie c ebenfalls 7 Stellen hat: 
 
 ```
 for(int c = 0; c < 7; c++) {
@@ -195,9 +195,9 @@ for(int c = 0; c < 7; c++) {
 	delayMicroseconds(100);
 }
 ```
-Damit nun die LEDs auch nach den Werten aus dem MSGEQ7 geschaltet werden, muss nach der for-Schleife eine IF-Schleife genutzt werden. Nachdem das freq array einmal bis zur 7. Stelle gefüllt wurde, werden die Stellen einzelnd ausgelesen und danach die LED-Reihen geschaltet.
+Damit nun die LEDs auch nach den Werten aus dem MSGEQ7 geschaltet werden, muss nach der for-Schleife eine IF-Schleife genutzt werden. Nachdem das freq Array einmal bis zur 7. Stelle gefüllt wurde, werden die Stellen einzelnd ausgelesen und danach die LED-Reihen geschaltet.
 <br>
-Dann wird mithilfe einer if-Schleife geprüft, in welchem Durchgang sich die for Schleife befindet und je nachdem die zugehörige Stelle im freq[c]-Array aufgerufen und ausgelesen. Dann wird geprüft, wie hoch dieser Wert ist und je nachdem unterschiedlich viele LEDs geschaltet. Dies geschieht mit geschachtelten if-Schleifen:
+Es wird mithilfe einer if-Schleife geprüft, wie hoch der Wert an der 0.,1.,2.3.... Stelle im freq[] Array ist und je nachdem unterschiedlich viele LEDs geschaltet. Dies geschieht mit geschachtelten if-Schleifen:
 ```
 if(freq[0] > 60) {
 	digitalWrite(41, HIGH);
@@ -218,7 +218,6 @@ if(freq[0] > 60) {
       	}      
    } 
 ```
-Das wird dann für C: 0-6 wiederholt. 
 
 Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder auf LOW geschaltet werden. Dies muss allerdings mit einem kleinen delay ausgeführt werden, damit die LEDs lange genug anbleiben, um sie auch mit dem Auge wahrzunehmen. <br>
 <details><summary>Es wird also am Ende der IF-Schleifen folgendes eingefügt:</summary>
@@ -488,8 +487,14 @@ void loop() {
 Die Pins sind dabei genauso wie beim HIGH schalten die Pins, an die die jeweiligen LEDs angeschlossen sind.
 <br>
 <h2 id="endprodukt">Endprodukt</h2>
+
+Als letztes bleibt nur noch, ein geeignetes Gehäuse für alle Komponenten zu bauen und im Zweifel noch ein bisschen an den Grenzen zu schrauben, an welcher eine bestimmte LED bei einem bestimmten Wert geschaltet wird. Mit den in dieser Anleitung genutzten Komponenten, sieht das Endprodukt dann in Aktion wie folgt aus:
+
 <p align="center"><a href="https://www.youtube.com/watch?v=c1khyxLBbP0&feature=youtu.be"><img src="https://user-images.githubusercontent.com/42578917/48955845-1abfce00-ef50-11e8-8d36-40bc57f555c4.png" width="400px"></a></p>
+
+In diesem Repository lässt sich außerdem der Komplette Code innerhalb der Datei "Audio_Spectrum_Analyser.ino" anschauen oder per Git-Pull ins eigene Repository übertragen. Dies ist eine Arduino IDE Datei, die direkt in der Arduino IDE geöffnet werden und hochgeladen werden kann!
 <h2 id="quellen">Quellen</h2>
 
 - https://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
 - https://www.sparkfun.com/datasheets/Components/General/MSGEQ7.pdf
+
