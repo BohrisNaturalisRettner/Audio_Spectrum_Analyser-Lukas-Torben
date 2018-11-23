@@ -100,7 +100,7 @@ Desweiteren müssen die LEDs inklusive Transistoren und Widerständen verlötet 
 <p align="center">R = 2V / 0,02A</p>
 <p align="center">R = 100Ohm
 
-Da auf die LEDs direkt draufgesehen werden soll (da ein Analyzer vor allem zum Anschauen gedacht ist) sind die LEDs mit 20mA deutlich zu hell. <a href="https://www.amazon.de/gp/product/B01N45KZIR/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1">Bei diesen LEDs</a> ist eine Reduzierung auf 15mA deutlich ansehnlicher. Nach dem Ohmschen Gesetz ergibt dies einen Widerstand von 133,333333 Ohm. In Verbindung mit den vorhandenen <a href="https://www.amazon.de/gp/product/B01LYGIOW4/ref=oh_aui_detailpage_o04_s01?ie=UTF8&psc=1">Widerständen</a> wird in diesem Fall ein 150Ohm Widerstand verwendet, womit ungefähr ~13mA durch die LEDs fließen. 
+Da auf die LEDs direkt draufgesehen werden soll (da ein Analyser vor allem zum Anschauen gedacht ist) sind die LEDs mit 20mA deutlich zu hell. <a href="https://www.amazon.de/gp/product/B01N45KZIR/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1">Bei diesen LEDs</a> ist eine Reduzierung auf 15mA deutlich ansehnlicher. Nach dem Ohmschen Gesetz ergibt dies einen Widerstand von 133,333333 Ohm. In Verbindung mit den vorhandenen <a href="https://www.amazon.de/gp/product/B01LYGIOW4/ref=oh_aui_detailpage_o04_s01?ie=UTF8&psc=1">Widerständen</a> wird in diesem Fall ein 150Ohm Widerstand verwendet, womit ungefähr ~13mA durch die LEDs fließen. 
 
 Die LEDs werden mit einem Transistor geschaltet. In Verbindung mit dem Vorwiderstand sieht die Schaltung für die Verwendung des NPN Transistors als Schalter so aus: 
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/48922518-8dc13a00-eea7-11e8-8692-49f0bb404116.png" width="200px"></p>
@@ -148,7 +148,7 @@ Damit nun der MSGEQ7 auch Daten für die Frequenzen ausgibt, muss er zuvor versc
   digitalWrite(strope, LOW);
   delayMicroseconds(500);
 ```
-Wie nun im Diagramm zu sehen muss zu Beginn des Programmes ein <b>Reset</b>-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strope Puls gestartet werden sobald der Reset durchgeführt wurde. Dieser muss aber, wie im Diagramm zu erkennen, konstant geschaltet werden. Beides lässt sich mit folgenden Zeilen bewerkstelligen:
+Wie nun im Diagramm zu sehen muss zu Beginn des Programmes ein <b>Reset</b>-Puls geschaltetet werden. Dies wird durch ein PWM (Pulse-Width-Modulated)-Signal über den Arduino gesteuert. Da dies nur zu Beginn und nur einmal ausgeführt werden muss, kann dies ebenso in die Setup-Funktion. Zudem muss der Strobe Puls gestartet werden, sobald der Reset durchgeführt wurde. Dieser muss aber, wie im Diagramm zu erkennen, konstant geschaltet werden. Beides lässt sich mit folgenden Zeilen bewerkstelligen:
 ``` 
 // MSGEQ7 wie im DataSheet genannt reset'en
 digitalWrite(reset, HIGH);
@@ -160,25 +160,24 @@ digitalWrite(reset, LOW);
 digitalWrite(strobe, HIGH);
 delayMicroseconds(100);
 ```  
-Die delayMicroseconds - Argumente sorgen dann dafür, das der HIGH, oder eben der LOW, auch eine gewisse Zeit anhält. Das dies notwendig ist, ist gut im<a href="#timing">Diagramm</a> zu erkennen.
+Die delayMicroseconds - Argumente sorgen dann dafür, das der HIGH, oder eben der LOW, auch eine gewisse Zeit anhält. Das dies notwendig ist, ist gut im <a href="#timing">Diagramm</a> zu erkennen.
 
 <h3 id="loopfunc">Die Loop-Funktion</h3>
 
-Innerhalb des Arduino  Programms ist die zweite Funktion die <b>Loop-Funktion</b>. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von vorne beginnt, muss die for-Schleife ebenfalls sieben durchläufe haben. Dafür wird zu Beginn der For-Schleife die Varibale "c" (für "counter" deklariert und zu Beginn der Schleife als =0 initialisiert. Mit c < 7 wird die obere Grenze definiert und mittels c++ wird pro Durchlauf c und 1 hochgezählt bis zur oberen Grenze.:
-
+Innerhalb des Arduino  Programms ist die zweite Funktion die <b>Loop-Funktion</b>. Sie läuft im Gegensatz zur Setup-Funktion, die nur vor Programmstart und nur einmal ausgeführt wird, kontinuerlich durch. Daher ist sie gut geeignet, um kontinuierlich die Werte des MSGEQ7 auszulesen. Dafür wird eine for-Schleife verwendet. Da der MSGEQ7 insgesamt für sieben Frequenzen Werte ausgibt, bevor er von vorne beginnt, muss die for-Schleife ebenfalls sieben Durchläufe haben. Dafür wird zu Beginn der for-Schleife die Varibale "c" (für "counter" deklariert und zu Beginn der Schleife als =0 initialisiert. Mit c < 7 wird die obere Grenze definiert und mittels c++ wird pro Durchlauf c um 1 hochgezählt bis zur oberen Grenze:
 ```
 for(int c = 0; c < 7; c++) {
 	//Hier kommt der Inhalt der for-Schleife rein
 }
 ``` 
-Wie dem <a href="#timing">Strobe-Timing-Diagramm</a> zu entnehmen, gibt der MSGEQ7 die Wert als Folge des LOW-Schaltens des Strobe Pulses aus. Daher wird zu Beginn der For-Schleife der strobe-Pin auf Low geschaltet und ein delayMicroseconds eingefügt.
+Wie dem <a href="#timing">Strobe-Timing-Diagramm</a> zu entnehmen, gibt der MSGEQ7 die Werte als Folge des LOW-Schaltens des Strobe Pulses aus. Daher wird zu Beginn der for-Schleife der strobe-Pin auf LOW geschaltet und ein delayMicroseconds eingefügt.
 ```
 for(int c = 0; c < 7; c++) {
 	digitalWrite(strobe, LOW);
 	delayMicroseconds(100);	
 }
 ```
-Als nächstes wird nach dem delay der Input am analogen Port ausgelesen, welcher zuvor in der Variable analog gespeichert wurde. Dies passiert mit der Funktion analogRead. Diese hat im return einen int Wert vom MSGEQ7, der an der Stelle c (abhängig davon bei welchem Durchlauf sich die for-schleife befindet) im Array freq gespeichert wird, das wie c ebenfalls 7 Stellen hat: 
+Als Nächstes wird nach dem delay der Input am analogen Port ausgelesen, welcher zuvor in der Variable analog gespeichert wurde. Dies passiert mit der Funktion analogRead. Diese hat im return einen int Wert vom MSGEQ7, der an der Stelle c (abhängig davon bei welchem Durchlauf sich die for-Schleife befindet) im Array freq gespeichert wird, das wie c ebenfalls 7 Stellen hat: 
 
 ```
 for(int c = 0; c < 7; c++) {
@@ -197,7 +196,7 @@ for(int c = 0; c < 7; c++) {
 	delayMicroseconds(100);
 }
 ```
-Damit nun die LEDs auch nach den Werten aus dem MSGEQ7 geschaltet werden, muss nach der for-Schleife eine IF-Schleife genutzt werden. Nachdem das freq Array einmal bis zur 7. Stelle gefüllt wurde, werden die Stellen einzelnd ausgelesen und danach die LED-Reihen geschaltet.
+Damit nun die LEDs auch nach den Werten aus dem MSGEQ7 geschaltet werden, muss nach der for-Schleife eine IF-Schleife genutzt werden. Nachdem das freq Array einmal bis zur 7. Stelle gefüllt wurde, werden die Stellen einzeln ausgelesen und danach die LED-Reihen geschaltet.
 <br>
 Es wird mithilfe einer if-Schleife geprüft, wie hoch der Wert an der 0.,1.,2.3.... Stelle im freq[] Array ist und je nachdem unterschiedlich viele LEDs geschaltet. Dies geschieht mit geschachtelten if-Schleifen:
 ```
@@ -223,7 +222,7 @@ if(freq[0] > 60) {
 
 Damit die LEDs nicht einmal angehen und dann an bleiben, müssen sie auch wieder auf LOW geschaltet werden. Dies muss allerdings mit einem kleinen delay ausgeführt werden, damit die LEDs lange genug anbleiben, um sie auch mit dem Auge wahrzunehmen. <br>
 <details><summary>Es wird also am Ende der IF-Schleifen folgendes eingefügt:</summary>
-
+	
 ```
   delay(50);
   digitalWrite(45, LOW);
@@ -486,15 +485,15 @@ void loop() {
 }
 ```
 </details>
-Die Pins sind dabei genauso wie beim HIGH schalten die Pins, an die die jeweiligen LEDs angeschlossen sind.
+Die Pins sind dabei, genauso wie beim HIGH schalten, die Pins, an die die jeweiligen LEDs angeschlossen sind.
 <br>
 <h2 id="endprodukt">Endprodukt</h2>
 
-Als letztes bleibt nur noch, ein geeignetes Gehäuse für alle Komponenten zu bauen und im Zweifel noch ein bisschen an den Grenzen zu schrauben, an welcher eine bestimmte LED bei einem bestimmten Wert geschaltet wird. Mit den in dieser Anleitung genutzten Komponenten, sieht das Endprodukt dann in Aktion wie folgt aus:
+Als Letztes bleibt nur noch ein geeignetes Gehäuse für alle Komponenten zu bauen und im Zweifel noch ein bisschen an den Grenzen zu schrauben, an welchen eine bestimmte LED bei einem bestimmten Wert geschaltet wird. Mit den in dieser Anleitung genutzten Komponenten, sieht das Endprodukt dann in Aktion wie folgt aus:
 
 <p align="center"><a href="https://www.youtube.com/watch?v=c1khyxLBbP0&feature=youtu.be"><img src="https://user-images.githubusercontent.com/42578917/48955845-1abfce00-ef50-11e8-8d36-40bc57f555c4.png" width="400px"><br>Link zu einem Video</a></p>
 
-In diesem Repository lässt sich außerdem der Komplette Code innerhalb der Datei "Audio_Spectrum_Analyser.ino" anschauen oder per Git-Pull ins eigene Repository übertragen. Dies ist eine Arduino IDE Datei, die direkt in der Arduino IDE geöffnet werden und hochgeladen werden kann!
+In diesem Repository lässt sich außerdem der komplette Code innerhalb der Datei "Audio_Spectrum_Analyser.ino" anschauen oder per Git-Pull ins eigene Repository übertragen. Dies ist eine Arduino IDE Datei, die direkt in der Arduino IDE geöffnet und hochgeladen werden kann!
 <h2 id="quellen">Quellen</h2>
 
 - https://www.eetimes.com/author.asp?section_id=216&doc_id=1323030
