@@ -2,13 +2,13 @@
 # Arduino Mega Audio Spectrum Analyser mit dem MSGEQ7
 
 <h1>Das Projekt</h1>
-Ein Audio Spectrum Analyzer ist ein Gerät, um Audio neben dem akustischen Eindruck auch visuell darzustellen. Um zu verstehen, wie das ganze funktioniert, ist es zunächst wichtig, den Aufbau von Audiosignalen zu verstehen:
+Ein Audio Spectrum Analyzer ist ein Gerät, um Audio neben dem akustischen Eindruck auch visuell darzustellen. Um zu verstehen, wie das ganze funktioniert, ist es zunächst wichtig den Aufbau von Audiosignalen zu verstehen:
 
 <p align="center"><img width="400px" src="https://user-images.githubusercontent.com/42578917/48780230-bdbae280-ecd9-11e8-8181-92e17ee0fbf0.jpg"></p>
 
-Wie zu erkennen, ist Audio aus verschiedenen Frequenzen, oft im Bereich von kHz, aufgebaut. Ein Audio Spectrum Analyser misst die Stärke bestimmter Frequenzen und gibt diese als visuelles Signal, oft in Form eines Balkens, der entsprechend stark oder schwach ausschlägt, wieder. Dieser Analyser tut genau das. Mittels eines Mikrocontrollers werden 7 Frequenzen des eingespeisten Audios durch einen Filter gemessen. Die erhaltenen Werte werden dann als Spannungswerte an einen Arduino übergeben. Dieser speichert die Werte in einer Variable, liest diese dann aus und schaltet dann je nach Höhe des Wertes 1-6 LEDs, die für alle 7 Frequenzen vorgesehen sind. Die LEDs sind mit Transistoren verbunden, der Arduino schaltet dann nur eine Spannung auf die Base, fungiert also quasi als das Bauteil, was den Lichtschalter umlegt, womit die LED angeht. 
+Wie zu erkennen ist Audio aus verschiedenen Frequenzen, oft im Bereich von kHz, aufgebaut. Ein Audio Spectrum Analyser misst die Stärke bestimmter Frequenzen und gibt diese als visuelles Signal, oft in Form eines Balkens, der entsprechend stark oder schwach ausschlägt, wieder. Dieser Analyser tut genau das. Mittels eines Mikrocontrollers werden 7 Frequenzen des eingespeisten Audios durch einen Filter gemessen. Die erhaltenen Werte werden dann als Spannungswerte an einen Arduino übergeben. Dieser speichert die Werte in einer Variable, liest diese dann aus und schaltet dann je nach Höhe des Wertes 1-6 LEDs, die für alle 7 Frequenzen vorgesehen sind. Die LEDs sind mit Transistoren verbunden, der Arduino schaltet dann nur eine Spannung auf die Base, fungiert also quasi als das Bauteil, was den Lichtschalter umlegt, womit die LED angeht. 
 
-Im folgenden kommt zu diesem Projekt eine <a href="#komponenten">Komponentenliste</a>, eine <a href="#software">Software-</a> und eine <a href="#hardware">Hardware-Anleitung</a>:
+Im Folgenden kommt zu diesem Projekt eine <a href="#komponenten">Komponentenliste</a>, eine <a href="#software">Software-</a> und eine <a href="#hardware">Hardware-Anleitung</a>:
 
 ## Inhaltsverzeichnis
   * <a href="#komponenten">Komponentenliste</a>
@@ -57,7 +57,7 @@ Im folgenden kommt zu diesem Projekt eine <a href="#komponenten">Komponentenlist
 <h2 id="bauundinst">Bauelemente und Installation</h2>
 <h3 id="bauelemente">Bauelemente</h3>
 
-Als Arduino wird in diesem Fall der <b>Elegoo Mega 2560</b> mit dem ATmega2560-Controller verwendet. Einerseits aufgrund seines günstigen Preises, andererseits wegen der 500mA Überlastungssicherung. Diese ist besonders beim Einsatz vieler kleiner Bauteile wie LEDs und Transistoren mit vielen möglichen Fehlerquellen, wie den Lötstellen und Kabelverbindungen, nützlich, um den Arduino vor Überlastung bei einem Schaltungsfehler zu schützen
+Als Arduino wird in diesem Fall der <b>Elegoo Mega 2560</b> mit dem ATmega2560-Controller verwendet. Einerseits aufgrund seines günstigen Preises, andererseits wegen der 500mA Überlastungssicherung. Diese ist besonders beim Einsatz vieler kleiner Bauteile wie LEDs und Transistoren mit vielen möglichen Fehlerquellen, wie den Lötstellen und Kabelverbindungen, nützlich, um den Arduino vor Überlastung bei einem Schaltungsfehler zu schützen.
 
 Um die einzelnen Frequenzen des Audios korrekt darstellen zu können, muss zunächst das vorhandene Audio in seine einzelnen Frequenzen aufgeteilt werden um anschließend Werte für die Stärke der einzelnen Frequenzen auslesen zu können. Beides kann der <b>Mikrocontroller MSGEQ7</b> durchführen. Das Input-Audio wird dabei in 7 verschiedene Frequenzen aufgeteilt und anschließend die Stärke der einzelnen Frequenzen als Spannungswert auf dem Output ausgeben.
 
@@ -86,7 +86,7 @@ Nach der Installation der Entwicklungsumgebung muss zunächst die Hardware gebau
 Damit nun der <b> MSGEQ7</b> Daten auswirft, muss er korrekt verkabelt werden. Um dies zu tun muss man ins <a href="https://www.sparkfun.com/datasheets/Components/General/MSGEQ7.pdf">Datasheet für den Mikrocontroller</a> schauen, auf dem man unter Typical Application eine Anleitung findet:
 <br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46585373-62f26200-ca70-11e8-92b2-6da1fc322290.png" width="300px" align="center"></p>
-Der Reset <b>Pin</b> (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) werden beim Arduino auf einen der PWM-Pins gelegt, in diesem Fall auf Pin 12 und 13. Ausserdem wird der MSGEQ7 von dem 5V Pin sowie dem GND-Pin des Arduino gespeist. Zudem muss der Pin 3 des MSGEQ7, welcher letztlich die Werte für die Frequenzen ausgibt an einen Analogen Pin des Arduino, in diesem Fall an Pin A1, angeschlossen werden. Zuletzt muss der Clock Oscillator Pin (Pin 8) über einen 33pF Kondensator und der Ground Pin (Pin 6) über einen 100nF (0.1uF) Kondensator an den Ground Pin des Arduino angeschlossen werden
+Der Reset <b>Pin</b> (Pin 7 des MSGEQ7) sowie der Strobe Pin (Pin 4 des MSGEQ7) werden beim Arduino auf einen der PWM-Pins gelegt, in diesem Fall auf Pin 12 und 13. Ausserdem wird der MSGEQ7 von dem 5V Pin, sowie dem GND-Pin des Arduino gespeist. Zudem muss der Pin 3 des MSGEQ7, welcher letztlich die Werte für die Frequenzen ausgibt, an einen analogen Pin des Arduino, in diesem Fall an Pin A1, angeschlossen werden. Zuletzt muss der Clock Oscillator Pin (Pin 8) über einen 33pF Kondensator und der Ground Pin (Pin 6) über einen 100nF (0.1uF) Kondensator an den Ground Pin des Arduino angeschlossen werden.
 <br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/42578917/46586617-5e827500-ca81-11e8-806b-150cc4b182ff.png" width="500px"></p>
 <br>
@@ -97,6 +97,8 @@ Die Schaltung wird dann auf eine Lochrasterplatine gebracht und verlötet. Wenn 
 Desweiteren müssen die LEDs inklusive Transistoren und Widerständen verlötet werden. Die (in diesem Fall blauen) LEDs brauchen eine Spannung von 3V und verbrauchen 20mA. Nach dem Ohm'schen Gesetz U=R x I wird bei einer Versorgungsspannung von 5V, also einem Spannungsabfall von 2V und einem Strombedarf von 20mA, nach R umgestellt R = U/I, ein Widerstand von 100Ohm benötigt
 <p align="center">U = R x I	| : I </p>
 <p align="center">R = U / I</p>
+<p align="center">R = 2V / 0,02A</p>
+<p align="center">R = 100Ohm
 
 Da auf die LEDs direkt draufgesehen werden soll (da ein Analyzer vor allem zum Anschauen gedacht ist) sind die LEDs mit 20mA deutlich zu hell. <a href="https://www.amazon.de/gp/product/B01N45KZIR/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1">Bei diesen LEDs</a> ist eine Reduzierung auf 15mA deutlich ansehnlicher. Nach dem Ohmschen Gesetz ergibt dies einen Widerstand von 133,333333 Ohm. In Verbindung mit den vorhandenen <a href="https://www.amazon.de/gp/product/B01LYGIOW4/ref=oh_aui_detailpage_o04_s01?ie=UTF8&psc=1">Widerständen</a> wird in diesem Fall ein 150Ohm Widerstand verwendet, womit ungefähr ~13mA durch die LEDs fließen. 
 
